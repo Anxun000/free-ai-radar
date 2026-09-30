@@ -238,12 +238,35 @@ def build_radar(cur_models, prev):
     return {"baseline": False, "added": added, "removed": removed, "changed": changed}
 
 
+DATA_FILE = DATA_DIR / "data.json"
+
+
+def load_prev_models():
+    """读上一次的 data.json，按平台分组。
+
+    用途：某个平台这次没配 key（本地没填 / CI 里没配 Secret）时，
+    沿用上次抓到的数据，而不是让那一整块数据凭空消失。
+    """
+    if not DATA_FILE.exists():
+        return {}
+    try:
+        d = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    by_plat = {}
+    for m in d.get("models") or []:
+        by_plat.setdefault(m.get("platform"), []).append(m)
+    return by_plat
+
+
 def main():
     keys = load_keys(KEYFILE)
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     SNAP_DIR.mkdir(parents=True, exist_ok=True)
 
+    prev_by_plat = load_prev_models()
     all_models, plat_out, errors = [], {}, []
+    carried_models = 0
 
     for slug, meta in R.PLATFORMS.items():
         env = meta.get("key_env")
@@ -255,10 +278,32 @@ def main():
         entry["configured"] = configured
 
         if not configured or slug not in FETCHERS:
-            entry["model_count"] = 0
-            entry["fetch"] = "skipped"
+            reason = "未配置" if not configured else "无采集器"
+            keep = prev_by_plat.get(slug) or []
+            if keep:
+                # 沿用上次数据。平台元数据用最新的 meta 覆盖（额度/入口可能在
+                # registry.py 里更新过），但指纹 fp 保持原样，以免变更雷达误报。
+                for r in keep:
+                    r = dict(r)
+                    r["free_kind"] = meta["kind"]
+                    r["base_url"] = meta["base_url"]
+                    r["signup_url"] = meta["signup_url"]
+                    r["needs_card"] = meta["needs_card"]
+                    r["needs_vpn"] = meta["needs_vpn"]
+                    r["region"] = meta["region"]
+                    r["quota"] = meta["quota"]
+                    r["platform_label"] = meta["label"]
+                    r["stale"] = True      # 标记：这条是上次的数据，本次没抓到
+                    all_models.append(r)
+                carried_models += len(keep)
+                entry["model_count"] = len(keep)
+                entry["fetch"] = "carried"
+                print(f"  [沿用] {meta['label']}: {len(keep)} 个模型（{reason}，沿用上次数据）")
+            else:
+                entry["model_count"] = 0
+                entry["fetch"] = "skipped"
+                print(f"  [跳过] {meta['label']}（{reason}）")
             plat_out[slug] = entry
-            print(f"  [跳过] {meta['label']}（{'未配置' if not configured else '无采集器'}）")
             continue
 
         try:
@@ -295,7 +340,9 @@ def main():
         "stats": {
             "platforms_configured": sum(1 for v in plat_out.values() if v["configured"]),
             "platforms_ok": sum(1 for v in plat_out.values() if v.get("fetch") == "ok"),
+            "platforms_carried": sum(1 for v in plat_out.values() if v.get("fetch") == "carried"),
             "total_models": len(all_models),
+            "stale_models": carried_models,
             "with_tools": sum(1 for m in all_models if m["caps"]["tools"]),
             "with_vision": sum(1 for m in all_models if m["caps"]["vision"]),
             "with_reasoning": sum(1 for m in all_models if m["caps"]["reasoning"]),
