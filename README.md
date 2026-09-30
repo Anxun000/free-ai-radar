@@ -60,18 +60,23 @@ free-ai-radar/
 │   └── probe_callable.py     ← 可调用性探针：真的发请求，识别「仅限 Agent 客户端」
 ├── tools/
 │   ├── check_keys.py         ← 密钥连通性自检（只输出状态，不打印密钥）
-│   └── verify_model.py       ← 单模型实测：对话 / 工具调用 / 图片输入
+│   ├── verify_model.py       ← 单模型实测：对话 / 工具调用 / 图片输入
+│   └── verify_all.py         ← 批量实测（全局限流 + 429 退避 + 断点续跑）
 ├── build.py                  ← 把 data.json 内嵌成两个单文件 HTML
 ├── templates/
 │   └── chat.html             ← 聊天页模板
 ├── data/
 │   ├── data.json             ← 当前数据
 │   ├── callable.json         ← 可调用性实测结果
+│   ├── verified.json         ← 逐项能力实测结果
 │   └── snapshots/*.json      ← 每日快照（变更雷达的基准）
 ├── dist/
 │   ├── 免费AI模型雷达.html    ← ★ 找模型
 │   └── 免费AI模型聊天.html    ← ★ 用模型（双击即聊）
-└── .github/workflows/daily.yml  ← 每天自动抓取并提交
+├── .gitattributes
+└── .github/workflows/
+    ├── daily.yml             ← 每天自动抓取数据并提交
+    └── verify.yml            ← 每周自动实测能力并提交
 ```
 
 ## 日常使用
@@ -100,19 +105,41 @@ python examples/quickstart.py <模型ID> "你想问的问题"
 
 ### 可选：逐项实测能力（对话 / 工具调用 / 图片输入）
 
+单个模型：
+
 ```bash
 python tools/verify_model.py stealth/space-bunny-alpha
 ```
 
-会真的发三次请求，然后把结果写入 `data/verified.json`，
-重新 `python build.py` 后，卡片上就会出现「**逐项实测 3/3**」徽章。
+把所有「可调用」的免费模型一次跑完：
 
-这三层可信度是叠加的：
+```bash
+python tools/verify_all.py            # 增量：已有结果的跳过
+python tools/verify_all.py --redo     # 全部重跑
+python tools/verify_all.py --only <模型ID>
+python tools/verify_all.py --dry-run  # 只列要跑哪些，不发请求
+```
+
+会真的发请求，结果写入 `data/verified.json`，重新 `python build.py` 后
+卡片上就会出现「**实测 N/M**」徽章（鼠标悬停能看到哪一项没通过）。
+
+判定是**三态**的，不会把「没测出来」冤枉成「不支持」：
+
+| 结果 | 含义 |
+|---|---|
+| ✅ 通过 | 真的调通了 |
+| ❌ 不支持 | 模型/端点明确拒绝（例如返回 "No endpoints found that support image input"） |
+| ⚠️ 未测出 | 上游限流等原因没测出来，**不计入分母** |
+
+批量脚本自带全局限流（默认 3.5 秒/请求）、429 自动退避、断点续跑，
+避免把免费额度打爆。
+
+三层可信度是叠加的：
 
 | 徽章 | 含义 | 怎么来的 |
 |---|---|---|
 | 能力来源：平台声明 | 平台接口自己说的 | 自动抓取 |
-| 逐项实测 N/3 | 我真的调通了这几项 | `tools/verify_model.py` |
+| 实测 N/M | 我真的调通了这几项 | `tools/verify_all.py` |
 | ✅ 实测可调用 | 真的能通过 API 调通 | `collector/probe_callable.py` |
 
 ### 可选：扫描免费模型的可调用性
@@ -150,10 +177,18 @@ OpenRouter 上有一类免费模型**被限制为只能在 Agent 客户端内使
 
 1. 把本目录推到一个仓库
 2. 在 `Settings → Secrets and variables → Actions` 里添加各平台的密钥（名字与 `.env.example` 里一致）
-3. `.github/workflows/daily.yml` 会在**每天北京时间 09:00** 自动抓取、重建网页并提交
+3. 两个工作流会自动接管：
+
+| 工作流 | 频率 | 做什么 | 消耗 |
+|---|---|---|---|
+| `daily.yml` | 每天北京时间 09:00 | 抓取模型列表 → 重建网页 → 提交 | 0 次调用（只用公开接口） |
+| `verify.yml` | 每周日北京时间 10:00 | 探测可调用性 + 逐项能力实测 → 重建 → 提交 | 约 65 次调用 / 周 |
+
+> 两条流程刻意拆开，是因为「实测」必须发真实请求。OpenRouter 免费档只有 50 请求/日，
+> 若每天跑实测会直接把额度吃光，所以按周跑。也可以随时在 Actions 页面手动触发。
 
 > GitHub Actions 对 **public 仓库完全免费无限量**；private 仓库每月 2000 分钟免费额度，
-> 本任务每次仅需几十秒，用量可忽略。
+> 这两个任务每次仅需几十秒到几分钟，用量可忽略。
 
 ## 维护平台清单
 

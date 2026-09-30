@@ -4,8 +4,13 @@
 =========================================================
 对指定模型发出【真实请求】，验证它的能力到底是"平台声明"还是"真的能用"：
   1. 基础对话   —— 模型是否可调用
-  2. 工具调用   —— 真的发一次 Function Calling
-  3. 图片输入   —— 真的传一张图片进去
+  2. 工具调用   —— 强制要求调用工具，看是否真的返回 tool_calls
+  3. 图片输入   —— 真的传一张图片进去，看是否能识别
+
+判定为【三态】，避免把"没测出来"误当成"不支持"：
+  yes     = 实测通过
+  no      = 模型/端点明确不支持
+  unknown = 没测出来（上游限流、正文为空等），不计入分母
 
 用法：
   python tools/verify_model.py thinkingmachines/inkling-small:free
@@ -40,6 +45,8 @@ PLATFORM_ROUTES = {
     "mistral": ("https://api.mistral.ai/v1", "MISTRAL_API_KEY"),
 }
 
+MARK = {"yes": "✅ 通过", "no": "❌ 不支持", "unknown": "⚠  未测出"}
+
 
 def make_png(w: int, h: int, rgb: tuple) -> bytes:
     """纯标准库生成一张纯色 PNG，用于图片输入测试。"""
@@ -66,71 +73,137 @@ def post(url: str, key: str, body: dict, timeout: int = 90):
         with urllib.request.urlopen(req, timeout=timeout) as r:
             return r.status, json.loads(r.read().decode("utf-8", "replace"))
     except urllib.error.HTTPError as e:
-        body = e.read(600).decode("utf-8", "replace")
+        raw = e.read(600).decode("utf-8", "replace")
         try:
-            body = json.dumps(json.loads(body), ensure_ascii=False)[:300]
+            raw = json.dumps(json.loads(raw), ensure_ascii=False)[:300]
         except Exception:
-            body = " ".join(body.split())[:300]
-        return e.code, {"_raw": body}
+            raw = " ".join(raw.split())[:300]
+        return e.code, {"_raw": raw}
     except Exception as e:
         return None, {"_raw": f"{type(e).__name__}: {e}"}
 
 
+# ---------------------------------------------------------------- 判定辅助
+def _blob(d) -> str:
+    try:
+        return json.dumps(d, ensure_ascii=False).lower()
+    except Exception:
+        return str(d).lower()
+
+
+def _is_limited(st, d) -> bool:
+    """上游限流 —— 属于「没测出来」，不是「不支持」。"""
+    if st == 429:
+        return True
+    b = _blob(d)
+    return "rate-limited" in b or "rate limited" in b or "too many requests" in b
+
+
+def _mentions(d, *words) -> bool:
+    b = _blob(d)
+    return any(w.lower() in b for w in words)
+
+
+def _msg(d):
+    return (d.get("choices") or [{}])[0].get("message", {}) or {}
+
+
+# ---------------------------------------------------------------- 三项测试
 def test_chat(base, key, model):
+    """基础对话：能不能调通。max_tokens 给足，避免推理模型把额度用光。"""
     st, d = post(f"{base}/chat/completions", key, {
-        "model": model, "max_tokens": 60,
+        "model": model, "max_tokens": 512,
         "messages": [{"role": "user", "content": "用一句话说明你是哪个模型。"}],
     })
-    if st != 200:
-        return False, f"HTTP {st} · {d.get('_raw','')}"
-    msg = (d.get("choices") or [{}])[0].get("message", {}) or {}
-    txt = (msg.get("content") or msg.get("reasoning_content") or "").strip()
-    return True, (txt[:110] + ("…" if len(txt) > 110 else "")) or "(返回内容为空)"
+    if st == 200:
+        txt = (_msg(d).get("content") or _msg(d).get("reasoning_content") or "").strip()
+        if not txt:
+            return "unknown", "HTTP 200，但正文为空（推理可能占满了额度）"
+        return "yes", txt[:110] + ("…" if len(txt) > 110 else "")
+    if _is_limited(st, d):
+        return "unknown", f"HTTP {st} · 上游限流，本次未测出"
+    return "no", f"HTTP {st} · {d.get('_raw','')}"
+
+
+TOOLS_SPEC = [{
+    "type": "function",
+    "function": {
+        "name": "get_weather",
+        "description": "查询某个城市的当前天气",
+        "parameters": {"type": "object",
+                       "properties": {"city": {"type": "string", "description": "城市名"}},
+                       "required": ["city"]},
+    },
+}]
+
+TOOLS_ASK = "北京现在天气怎么样？请调用工具查询。"
+
+
+def _tool_call(base, key, model, choice):
+    return post(f"{base}/chat/completions", key, {
+        "model": model, "max_tokens": 800,
+        "messages": [{"role": "user", "content": TOOLS_ASK}],
+        "tools": TOOLS_SPEC,
+        "tool_choice": choice,
+    })
+
+
+def _extract_call(d):
+    calls = _msg(d).get("tool_calls") or []
+    if not calls:
+        return None
+    fn = calls[0].get("function", {}) or {}
+    args = str(fn.get("arguments"))[:60]
+    return f'{fn.get("name")}({args})'
 
 
 def test_tools(base, key, model):
-    st, d = post(f"{base}/chat/completions", key, {
-        "model": model, "max_tokens": 200,
-        "messages": [{"role": "user", "content": "北京现在天气怎么样？请调用工具查询。"}],
-        "tools": [{
-            "type": "function",
-            "function": {
-                "name": "get_weather",
-                "description": "查询某个城市的当前天气",
-                "parameters": {"type": "object",
-                               "properties": {"city": {"type": "string", "description": "城市名"}},
-                               "required": ["city"]},
-            },
-        }],
-        "tool_choice": "auto",
-    })
-    if st != 200:
-        return False, f"HTTP {st} · {d.get('_raw','')}"
-    msg = (d.get("choices") or [{}])[0].get("message", {}) or {}
-    calls = msg.get("tool_calls") or []
-    if calls:
-        fn = calls[0].get("function", {})
-        return True, f'返回 tool_calls → {fn.get("name")}({fn.get("arguments")})'
-    return False, f"未返回 tool_calls（模型选择直接回答）：{(msg.get('content') or '')[:70]}"
+    """工具调用：先强制 tool_choice=required，没返回再用 auto 复核一次。"""
+    st, d = _tool_call(base, key, model, "required")
+
+    if st == 200:
+        hit = _extract_call(d)
+        if hit:
+            return "yes", f"强制调用 → {hit}"
+        # 200 但没调用 —— 可能是模型忽略了 required，用 auto 复核避免误判
+        st2, d2 = _tool_call(base, key, model, "auto")
+        if st2 == 200:
+            hit2 = _extract_call(d2)
+            if hit2:
+                return "yes", f"自动选择 → {hit2}"
+        return "no", "两次请求均未返回 tool_calls（该模型不支持函数调用）"
+
+    if _is_limited(st, d):
+        return "unknown", f"HTTP {st} · 上游限流，本次未测出"
+    if _mentions(d, "tool use", "tool_choice", "no endpoints found that support"):
+        return "no", f"HTTP {st} · 端点明确不支持工具调用"
+    return "no", f"HTTP {st} · {d.get('_raw','')}"
 
 
 def test_vision(base, key, model):
+    """图片输入：真的塞一张红图进去，看能否识别出颜色。"""
     b64 = base64.b64encode(make_png(64, 64, (220, 30, 30))).decode()
     st, d = post(f"{base}/chat/completions", key, {
-        "model": model, "max_tokens": 80,
+        "model": model, "max_tokens": 400,
         "messages": [{"role": "user", "content": [
             {"type": "text", "text": "这张图是什么颜色？只回答颜色。"},
             {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}},
         ]}],
     })
-    if st != 200:
-        return False, f"HTTP {st} · {d.get('_raw','')}"
-    msg = (d.get("choices") or [{}])[0].get("message", {}) or {}
-    txt = (msg.get("content") or "").strip()
-    hit = ("红" in txt) or ("red" in txt.lower())
-    return hit, (txt[:90] or "(空)") + ("" if hit else "  ← 未能识别出红色")
+    if st == 200:
+        txt = (_msg(d).get("content") or "").strip()
+        if not txt:
+            return "unknown", "HTTP 200，但正文为空，无法判断"
+        hit = ("红" in txt) or ("red" in txt.lower())
+        return ("yes" if hit else "no"), txt[:90] + ("" if hit else "  ← 没能识别出红色")
+    if _is_limited(st, d):
+        return "unknown", f"HTTP {st} · 上游限流，本次未测出"
+    if _mentions(d, "image input", "support image", "no endpoints found that support"):
+        return "no", f"HTTP {st} · 端点明确不支持图片输入"
+    return "no", f"HTTP {st} · {d.get('_raw','')}"
 
 
+# ---------------------------------------------------------------- CLI
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("model", help="模型 ID，例如 thinkingmachines/inkling-small:free")
@@ -142,46 +215,46 @@ def main():
     if args.platform not in PLATFORM_ROUTES:
         raise SystemExit(f"不支持的平台：{args.platform}，可选：{', '.join(PLATFORM_ROUTES)}")
     base, env = PLATFORM_ROUTES[args.platform]
-    keys = load_keys(KEYFILE)
-    key = keys.get(env)
+    key = load_keys(KEYFILE).get(env)
     if not key:
         raise SystemExit(f"密钥文件里没有 {env}，无法实测。")
 
     print(f"实测模型：{args.model}")
     print(f"平台    ：{args.platform}  ({base})")
-    print("=" * 70)
+    print("=" * 74)
 
     results = []
     print("\n[1/3] 基础对话 …")
-    ok, info = test_chat(base, key, args.model)
-    results.append(("基础对话", ok))
-    print(f"      {'✅ 通过' if ok else '❌ 未通过'}  {info}")
+    s, info = test_chat(base, key, args.model)
+    results.append(("基础对话", s))
+    print(f"      {MARK[s]}  {info}")
 
     print("\n[2/3] 工具调用 …")
-    ok, info = test_tools(base, key, args.model)
-    results.append(("工具调用", ok))
-    print(f"      {'✅ 通过' if ok else '❌ 未通过'}  {info}")
+    s, info = test_tools(base, key, args.model)
+    results.append(("工具调用", s))
+    print(f"      {MARK[s]}  {info}")
 
     if args.skip_vision:
         print("\n[3/3] 图片输入 …（已跳过）")
     else:
         print("\n[3/3] 图片输入 …")
-        ok, info = test_vision(base, key, args.model)
-        results.append(("图片输入", ok))
-        print(f"      {'✅ 通过' if ok else '❌ 未通过'}  {info}")
+        s, info = test_vision(base, key, args.model)
+        results.append(("图片输入", s))
+        print(f"      {MARK[s]}  {info}")
 
-    print("\n" + "=" * 70)
-    passed = sum(1 for _, o in results if o)
-    print(f"结论：{passed}/{len(results)} 项实测通过")
-    for name, o in results:
-        print(f"  {'✅' if o else '❌'} {name}")
+    print("\n" + "=" * 74)
+    tested = [(n, s) for n, s in results if s != "unknown"]
+    passed = [n for n, s in tested if s == "yes"]
+    print(f"结论：{len(passed)}/{len(tested)} 项实测通过"
+          + (f"（另有 {len(results)-len(tested)} 项未测出）" if len(results) > len(tested) else ""))
+    for name, s in results:
+        print(f"  {MARK[s]}  {name}")
 
     save_result(args.model, args.platform, results)
 
 
 def save_result(model: str, platform: str, results):
-    """把实测结果写入 data/verified.json，供 build.py 合成「实测通过」徽章。"""
-    import json
+    """写入 data/verified.json，供 build.py 渲染「逐项实测」徽章。"""
     from datetime import datetime, timezone
 
     path = ROOT / "data" / "verified.json"
@@ -192,15 +265,16 @@ def save_result(model: str, platform: str, results):
             data = json.loads(path.read_text(encoding="utf-8"))
         except Exception:
             data = {}
-    key = f"{platform}::{model}"
-    data[key] = {
-        "model": model,
-        "platform": platform,
-        "chat": dict(results).get("基础对话", False),
-        "tools": dict(results).get("工具调用", False),
-        "vision": dict(results).get("图片输入", False),
-        "verified_at": datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds"),
-    }
+
+    d = dict(results)
+    rec = {"model": model, "platform": platform}
+    for cn, en in (("基础对话", "chat"), ("工具调用", "tools"), ("图片输入", "vision")):
+        v = d.get(cn)
+        rec[en] = (v == "yes")
+        rec.setdefault("tested", {})[en] = (v in ("yes", "no"))
+    rec["verified_at"] = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
+
+    data[f"{platform}::{model}"] = rec
     path.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"\n已记录到 {path.name}（共 {len(data)} 个模型的实测结果）")
 

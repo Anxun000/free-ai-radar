@@ -326,7 +326,7 @@ function render(){
       <div class="badges">
         <span class="b k-${m.free_kind}">${k[0]} ${k[1]}</span>
         <span class="b ${cl[2]}">${cl[0]} ${cl[1]}</span>
-        ${m.verified?`<span class="b c-ok">逐项实测 ${[m.verified.chat,m.verified.tools,m.verified.vision].filter(Boolean).length}/3</span>`:""}
+        ${m.verified?(()=>{const v=m.verified;const N={chat:"对话",tools:"工具",vision:"图片"};const ks=["chat","tools","vision"].filter(k=>!v.tested||v.tested[k]);if(!ks.length)return"";const p=ks.filter(k=>v[k]).length;const tip=ks.map(k=>N[k]+"："+(v[k]?"通过":"不支持")).join("；")+(v.tested&&ks.length<3?"（另有项未测出）":"");return '<span class="b '+(p===ks.length?"c-ok":"c-warn")+'" title="'+tip+'">实测 '+p+'/'+ks.length+'</span>';})():""}
         <span class="b src">能力来源：${sr[0]}</span>
         ${m.needs_card?'<span class="b">需绑卡</span>':'<span class="b on">免绑卡</span>'}
       </div>

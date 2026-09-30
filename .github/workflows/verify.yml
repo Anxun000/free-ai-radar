@@ -1,0 +1,50 @@
+name: 每周能力实测
+
+# 逐项能力实测比较慢（每个模型要发 3~4 次真实请求），所以单独拆出来按周跑。
+# 也可以随时在 Actions 页面手动触发。
+
+on:
+  schedule:
+    # 每周日 02:00 UTC = 北京时间 10:00
+    - cron: "0 2 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: 先探测可调用性
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: python collector/probe_callable.py
+
+      - name: 逐项能力实测（对话 / 工具 / 图片）
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        # 每次只测 8 个（约 24 次真实请求），避免一次性占满免费档的 50 请求/日。
+        # 脚本会自动优先补测「上次没测出来」的模型，跑两轮即可覆盖全部。
+        run: python tools/verify_all.py --limit 8 --workers 2 --interval 4
+
+      - name: 重新生成单文件应用
+        run: python build.py
+
+      - name: 提交实测结果
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ dist/
+          if git diff --cached --quiet; then
+            echo "无变化，跳过提交"
+          else
+            git commit -m "chore: 更新能力实测结果 $(date -u +%Y-%m-%d)"
+            git push
+          fi

@@ -37,6 +37,10 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: python collector/collect.py
 
+      # 注意：不在这里跑 probe_callable / verify_all ——
+      # 那两个会发真实请求消耗额度（OpenRouter 免费档 50 请求/日），
+      # 已拆到每周任务 .github/workflows/verify.yml 里。
+
       - name: 重新生成单文件应用
         run: python build.py
 
