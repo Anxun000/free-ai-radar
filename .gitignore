@@ -1,0 +1,33 @@
+# ============================================================
+#  密钥防线 —— 这个文件的作用是：保证密钥永远不会进 Git
+#  改动这里之前，请先确认你清楚后果
+# ============================================================
+
+# --- 密钥文件：一律不提交 ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets.json
+credentials.json
+
+# 本地填写用的密钥文件（明显命名的那个）
+密钥填写.txt
+密钥*.txt
+
+# 实测验证的本地结果（可能含账号痕迹）
+verify_result.local.json
+
+# --- 运行时 / 缓存 ---
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# --- 系统 ---
+.DS_Store
+Thumbs.db
+desktop.ini

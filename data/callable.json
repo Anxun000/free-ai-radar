@@ -1,0 +1,133 @@
+{
+ "probed_at": "2026-09-30T19:53:15+08:00",
+ "counts": {
+  "callable": 13,
+  "agentic_only": 2,
+  "congested": 3,
+  "not_chat": 2,
+  "error": 0
+ },
+ "results": {
+  "stealth/space-bunny-alpha": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "Space Bunny Alpha"
+  },
+  "inclusionai/ling-3.0-flash-sante:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "inclusionAI: Ling 3.0 Flash Sante (free)"
+  },
+  "qwen/qwen3.8-27b:free": {
+   "verdict": "congested",
+   "http": 429,
+   "message": "Provider returned error",
+   "name": "Qwen: Qwen3.8 27B (free)"
+  },
+  "dots-studio/dots-3-note-preview:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "Dots Studio: Dots3-Note Preview (free)"
+  },
+  "liquid/lfm-2.5-2.6b:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "LiquidAI: LFM2.5-2.6B (free)"
+  },
+  "nvidia/nemotron-3.5-lightning:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "NVIDIA: Nemotron 3.5 Lightning (free)"
+  },
+  "thinkingmachines/inkling-small:free": {
+   "verdict": "agentic_only",
+   "http": 403,
+   "message": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+   "name": "Thinking Machines: Inkling Small (free)"
+  },
+  "poolside/laguna-s-2.1:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "Poolside: Laguna S 2.1 (free)"
+  },
+  "thinkingmachines/inkling:free": {
+   "verdict": "agentic_only",
+   "http": 403,
+   "message": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+   "name": "Thinking Machines: Inkling (free)"
+  },
+  "poolside/laguna-xs-2.1:free": {
+   "verdict": "congested",
+   "http": 429,
+   "message": "Provider returned error",
+   "name": "Poolside: Laguna XS 2.1 (free)"
+  },
+  "cohere/north-mini-code:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "Cohere: North Mini Code (free)"
+  },
+  "nvidia/nemotron-3.5-content-safety:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "NVIDIA: Nemotron 3.5 Content Safety (free)"
+  },
+  "nvidia/nemotron-3-ultra-550b-a55b:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "NVIDIA: Nemotron 3 Ultra (free)"
+  },
+  "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "NVIDIA: Nemotron 3 Nano Omni (free)"
+  },
+  "google/gemma-4-26b-a4b-it:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "Google: Gemma 4 26B A4B  (free)"
+  },
+  "google/gemma-4-31b-it:free": {
+   "verdict": "congested",
+   "http": 429,
+   "message": "Provider returned error",
+   "name": "Google: Gemma 4 31B (free)"
+  },
+  "google/lyria-3-pro-preview": {
+   "verdict": "not_chat",
+   "http": null,
+   "message": "输出模态：text, audio（音乐生成，需专用接口）",
+   "name": "Google: Lyria 3 Pro Preview"
+  },
+  "google/lyria-3-clip-preview": {
+   "verdict": "not_chat",
+   "http": null,
+   "message": "输出模态：text, audio（音乐生成，需专用接口）",
+   "name": "Google: Lyria 3 Clip Preview"
+  },
+  "nvidia/nemotron-3-super-120b-a12b:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "NVIDIA: Nemotron 3 Super (free)"
+  },
+  "openrouter/free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "Free Models Router"
+  }
+ },
+ "note": "lyria 两项为人工修正（音乐生成模型，对话接口不适用）"
+}

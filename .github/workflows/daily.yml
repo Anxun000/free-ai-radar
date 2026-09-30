@@ -1,0 +1,53 @@
+name: 每日抓取免费模型数据
+
+on:
+  schedule:
+    # 每天 01:00 UTC = 北京时间 09:00
+    - cron: "0 1 * * *"
+  workflow_dispatch:   # 也支持手动点按钮触发
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # 无第三方依赖，用标准库即可，跳过 pip 安装
+      - name: 抓取各平台模型数据
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
+          LONGCAT_API_KEY: ${{ secrets.LONGCAT_API_KEY }}
+          SENSENOVA_API_KEY: ${{ secrets.SENSENOVA_API_KEY }}
+          AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+          HUGGINGFACE_API_KEY: ${{ secrets.HUGGINGFACE_API_KEY }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python collector/collect.py
+
+      - name: 重新生成单文件应用
+        run: python build.py
+
+      - name: 提交变更
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ dist/
+          if git diff --cached --quiet; then
+            echo "数据无变化，跳过提交"
+          else
+            git commit -m "chore: 更新免费模型数据 $(date -u +%Y-%m-%d)"
+            git push
+          fi

@@ -1,0 +1,10 @@
+{
+ "openrouter::stealth/space-bunny-alpha": {
+  "model": "stealth/space-bunny-alpha",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": true,
+  "vision": true,
+  "verified_at": "2026-09-30T21:34:10+08:00"
+ }
+}
