@@ -1,13 +1,25 @@
 {
- "probed_at": "2026-09-30T19:53:15+08:00",
+ "probed_at": "2026-10-04T04:08:13+00:00",
  "counts": {
-  "callable": 13,
+  "callable": 15,
   "agentic_only": 2,
   "congested": 3,
   "not_chat": 2,
   "error": 0
  },
  "results": {
+  "inclusionai/ling-3.1-flash": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "inclusionAI: Ling 3.1 Flash"
+  },
+  "apodex/apodex-1.1-mini:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "Apodex: Apodex 1.1 Mini (free)"
+  },
   "stealth/space-bunny-alpha": {
    "verdict": "callable",
    "http": 200,
@@ -21,9 +33,9 @@
    "name": "inclusionAI: Ling 3.0 Flash Sante (free)"
   },
   "qwen/qwen3.8-27b:free": {
-   "verdict": "congested",
-   "http": 429,
-   "message": "Provider returned error",
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
    "name": "Qwen: Qwen3.8 27B (free)"
   },
   "dots-studio/dots-3-note-preview:free": {
@@ -93,9 +105,9 @@
    "name": "NVIDIA: Nemotron 3 Nano Omni (free)"
   },
   "google/gemma-4-26b-a4b-it:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
+   "verdict": "congested",
+   "http": 429,
+   "message": "Provider returned error",
    "name": "Google: Gemma 4 26B A4B  (free)"
   },
   "google/gemma-4-31b-it:free": {
@@ -107,13 +119,13 @@
   "google/lyria-3-pro-preview": {
    "verdict": "not_chat",
    "http": null,
-   "message": "输出模态：text, audio（音乐生成，需专用接口）",
+   "message": "输出模态：text, audio（需专用接口）",
    "name": "Google: Lyria 3 Pro Preview"
   },
   "google/lyria-3-clip-preview": {
    "verdict": "not_chat",
    "http": null,
-   "message": "输出模态：text, audio（音乐生成，需专用接口）",
+   "message": "输出模态：text, audio（需专用接口）",
    "name": "Google: Lyria 3 Clip Preview"
   },
   "nvidia/nemotron-3-super-120b-a12b:free": {
@@ -128,6 +140,5 @@
    "message": "",
    "name": "Free Models Router"
   }
- },
- "note": "lyria 两项为人工修正（音乐生成模型，对话接口不适用）"
+ }
 }

@@ -219,5 +219,56 @@
    "vision": true
   },
   "verified_at": "2026-09-30T21:57:52+08:00"
+ },
+ "openrouter::apodex/apodex-1.1-mini:free": {
+  "model": "apodex/apodex-1.1-mini:free",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": true,
+  "vision": false,
+  "tested": {
+   "chat": true,
+   "tools": true,
+   "vision": true
+  },
+  "declared": {
+   "tools": true,
+   "vision": false
+  },
+  "verified_at": "2026-10-04T04:08:44+00:00"
+ },
+ "openrouter::inclusionai/ling-3.1-flash": {
+  "model": "inclusionai/ling-3.1-flash",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": true,
+  "vision": false,
+  "tested": {
+   "chat": true,
+   "tools": true,
+   "vision": true
+  },
+  "declared": {
+   "tools": true,
+   "vision": false
+  },
+  "verified_at": "2026-10-04T04:08:56+00:00"
+ },
+ "openrouter::qwen/qwen3.8-27b:free": {
+  "model": "qwen/qwen3.8-27b:free",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": true,
+  "vision": true,
+  "tested": {
+   "chat": true,
+   "tools": true,
+   "vision": true
+  },
+  "declared": {
+   "tools": true,
+   "vision": true
+  },
+  "verified_at": "2026-10-04T04:09:34+00:00"
  }
 }
