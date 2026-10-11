@@ -270,5 +270,22 @@
    "vision": true
   },
   "verified_at": "2026-10-04T04:09:34+00:00"
+ },
+ "openrouter::poolside/laguna-xs-2.1:free": {
+  "model": "poolside/laguna-xs-2.1:free",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": true,
+  "vision": false,
+  "tested": {
+   "chat": true,
+   "tools": true,
+   "vision": true
+  },
+  "declared": {
+   "tools": true,
+   "vision": false
+  },
+  "verified_at": "2026-10-11T02:18:11+00:00"
  }
 }

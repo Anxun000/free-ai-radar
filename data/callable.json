@@ -1,9 +1,9 @@
 {
- "probed_at": "2026-10-04T04:08:13+00:00",
+ "probed_at": "2026-10-11T02:17:08+00:00",
  "counts": {
-  "callable": 15,
+  "callable": 13,
   "agentic_only": 2,
-  "congested": 3,
+  "congested": 2,
   "not_chat": 2,
   "error": 0
  },
@@ -19,24 +19,6 @@
    "http": 200,
    "message": "",
    "name": "Apodex: Apodex 1.1 Mini (free)"
-  },
-  "stealth/space-bunny-alpha": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
-   "name": "Space Bunny Alpha"
-  },
-  "inclusionai/ling-3.0-flash-sante:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
-   "name": "inclusionAI: Ling 3.0 Flash Sante (free)"
-  },
-  "qwen/qwen3.8-27b:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
-   "name": "Qwen: Qwen3.8 27B (free)"
   },
   "dots-studio/dots-3-note-preview:free": {
    "verdict": "callable",
@@ -75,9 +57,9 @@
    "name": "Thinking Machines: Inkling (free)"
   },
   "poolside/laguna-xs-2.1:free": {
-   "verdict": "congested",
-   "http": 429,
-   "message": "Provider returned error",
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
    "name": "Poolside: Laguna XS 2.1 (free)"
   },
   "cohere/north-mini-code:free": {
