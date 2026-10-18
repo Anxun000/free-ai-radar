@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-17T05:24:46+00:00",
- "generated_date": "2026-10-17",
- "prev_snapshot": "2026-10-16",
+ "generated_at": "2026-10-18T05:34:32+00:00",
+ "generated_date": "2026-10-18",
+ "prev_snapshot": "2026-10-17",
  "stats": {
   "platforms_configured": 8,
   "platforms_ok": 8,
@@ -27,7 +27,7 @@
    "note": "单 key 聚合 20 个月费为 0 的模型，另有 openrouter/free 路由自动挑选可用免费模型",
    "key_env": "OPENROUTER_API_KEY",
    "api_gives": "full",
-   "verified": "2026-10-17",
+   "verified": "2026-10-18",
    "configured": "https://openrouter.ai/api/v1/models",
    "model_count": 19,
    "fetch": "ok"
@@ -44,7 +44,7 @@
    "note": "免绑卡。注意：免费档的数据可能被用于改进产品（欧洲经济区/英国/瑞士除外）",
    "key_env": "GEMINI_API_KEY",
    "api_gives": "partial",
-   "verified": "2026-10-17",
+   "verified": "2026-10-18",
    "configured": "https://generativelanguage.googleapis.com/v1beta/models",
    "model_count": 46,
    "fetch": "ok"
@@ -61,7 +61,7 @@
    "note": "推理速度最快的免费档之一。默认不保留数据，可开启零数据保留",
    "key_env": "GROQ_API_KEY",
    "api_gives": "partial",
-   "verified": "2026-10-17",
+   "verified": "2026-10-18",
    "configured": "https://api.groq.com/openai/v1/models",
    "model_count": 11,
    "fetch": "ok"
@@ -78,7 +78,7 @@
    "note": "托管大量开源模型。注册需手机号验证。会话内容不存储",
    "key_env": "NVIDIA_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-10-17",
+   "verified": "2026-10-18",
    "configured": "https://integrate.api.nvidia.com/v1/models",
    "model_count": 81,
    "fetch": "ok"
@@ -95,7 +95,7 @@
    "note": "国内直连。GLM 的 Flash 系列是长期免费的轻量档",
    "key_env": "ZHIPU_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-10-17",
+   "verified": "2026-10-18",
    "configured": "https://open.bigmodel.cn/api/paas/v4/models",
    "model_count": 11,
    "fetch": "ok"
@@ -112,7 +112,7 @@
    "note": "国内直连。LongCat-2.5-Preview：1.6T 总参 / 约 48B 激活 / 1M 上下文 / 原生多模态，强化 Coding",
    "key_env": "LONGCAT_API_KEY",
    "api_gives": "partial",
-   "verified": "2026-10-17",
+   "verified": "2026-10-18",
    "configured": "https://api.longcat.chat/openai/v1/models",
    "model_count": 2,
    "fetch": "ok"
@@ -129,7 +129,7 @@
    "note": "国内直连。同时提供 OpenAI 兼容端点与 Anthropic Messages 兼容端点（/v1/messages）",
    "key_env": "SENSENOVA_API_KEY",
    "api_gives": "full",
-   "verified": "2026-10-17",
+   "verified": "2026-10-18",
    "configured": "https://token.sensenova.cn/v1/models",
    "model_count": 7,
    "fetch": "ok"
@@ -146,7 +146,7 @@
    "note": "国内直连。含文本、图像、视频生成模型",
    "key_env": "AGNES_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-10-17",
+   "verified": "2026-10-18",
    "configured": "https://apihub.agnes-ai.com/v1/models",
    "model_count": 10,
    "fetch": "ok"
@@ -163,7 +163,7 @@
    "note": "需要 account_id + API Token 两个值配套。数据不用于训练",
    "key_env": "CLOUDFLARE_API_TOKEN",
    "api_gives": "minimal",
-   "verified": "2026-10-17",
+   "verified": "2026-10-18",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -180,7 +180,7 @@
    "note": "默认用你的数据训练模型，可在后台关闭",
    "key_env": "MISTRAL_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-10-17",
+   "verified": "2026-10-18",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -197,7 +197,7 @@
    "note": "仅限开发/评估用途",
    "key_env": "COHERE_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-10-17",
+   "verified": "2026-10-18",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -214,7 +214,7 @@
    "note": "聚合 200+ 模型的推理服务，额度很小，适合偶尔试",
    "key_env": "HUGGINGFACE_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-10-17",
+   "verified": "2026-10-18",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -2267,239 +2267,6 @@
   },
   {
    "platform": "groq",
-   "id": "canopylabs/orpheus-v1-english",
-   "name": "Canopy Labs Orpheus V1 English",
-   "context": 4000,
-   "max_out": 50000,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "6bac7e75adf3"
-  },
-  {
-   "platform": "groq",
-   "id": "whisper-large-v3-turbo",
-   "name": "Whisper Large V3 Turbo",
-   "context": 448,
-   "max_out": 448,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": true,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "audio"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "ec06295e47be"
-  },
-  {
-   "platform": "groq",
-   "id": "canopylabs/orpheus-arabic-saudi",
-   "name": "Canopy Labs Orpheus Arabic Saudi",
-   "context": 4000,
-   "max_out": 50000,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "6bac7e75adf3"
-  },
-  {
-   "platform": "groq",
-   "id": "openai/gpt-oss-120b",
-   "name": "GPT OSS 120B",
-   "context": 131072,
-   "max_out": 65536,
-   "caps": {
-    "tools": true,
-    "vision": false,
-    "reasoning": true,
-    "json": true,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "fa15a86e7f8a"
-  },
-  {
-   "platform": "groq",
-   "id": "openai/gpt-oss-safeguard-20b",
-   "name": "Safety GPT OSS 20B",
-   "context": 131072,
-   "max_out": 65536,
-   "caps": {
-    "tools": true,
-    "vision": false,
-    "reasoning": true,
-    "json": true,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "fa15a86e7f8a"
-  },
-  {
-   "platform": "groq",
-   "id": "qwen/qwen3.8-27b",
-   "name": "Qwen/Qwen3.8-27B",
-   "context": 131072,
-   "max_out": 16384,
-   "caps": {
-    "tools": true,
-    "vision": true,
-    "reasoning": true,
-    "json": true,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text",
-    "image"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "c1c4add1f841"
-  },
-  {
-   "platform": "groq",
-   "id": "meta-llama/llama-prompt-guard-2-86m",
-   "name": "Prompt Guard 2 86M",
-   "context": 512,
-   "max_out": 512,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": true,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "7ce56714a315"
-  },
-  {
-   "platform": "groq",
-   "id": "openai/gpt-oss-20b",
-   "name": "GPT OSS 20B",
-   "context": 131072,
-   "max_out": 65536,
-   "caps": {
-    "tools": true,
-    "vision": false,
-    "reasoning": true,
-    "json": true,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "fa15a86e7f8a"
-  },
-  {
-   "platform": "groq",
    "id": "whisper-large-v3",
    "name": "Whisper",
    "context": 448,
@@ -2584,6 +2351,239 @@
    "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
    "platform_label": "Groq",
    "fp": "68feda92e2fe"
+  },
+  {
+   "platform": "groq",
+   "id": "openai/gpt-oss-20b",
+   "name": "GPT OSS 20B",
+   "context": 131072,
+   "max_out": 65536,
+   "caps": {
+    "tools": true,
+    "vision": false,
+    "reasoning": true,
+    "json": true,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "fa15a86e7f8a"
+  },
+  {
+   "platform": "groq",
+   "id": "canopylabs/orpheus-v1-english",
+   "name": "Canopy Labs Orpheus V1 English",
+   "context": 4000,
+   "max_out": 50000,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "6bac7e75adf3"
+  },
+  {
+   "platform": "groq",
+   "id": "openai/gpt-oss-120b",
+   "name": "GPT OSS 120B",
+   "context": 131072,
+   "max_out": 65536,
+   "caps": {
+    "tools": true,
+    "vision": false,
+    "reasoning": true,
+    "json": true,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "fa15a86e7f8a"
+  },
+  {
+   "platform": "groq",
+   "id": "canopylabs/orpheus-arabic-saudi",
+   "name": "Canopy Labs Orpheus Arabic Saudi",
+   "context": 4000,
+   "max_out": 50000,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "6bac7e75adf3"
+  },
+  {
+   "platform": "groq",
+   "id": "qwen/qwen3.8-27b",
+   "name": "Qwen/Qwen3.8-27B",
+   "context": 131072,
+   "max_out": 16384,
+   "caps": {
+    "tools": true,
+    "vision": true,
+    "reasoning": true,
+    "json": true,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text",
+    "image"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "c1c4add1f841"
+  },
+  {
+   "platform": "groq",
+   "id": "openai/gpt-oss-safeguard-20b",
+   "name": "Safety GPT OSS 20B",
+   "context": 131072,
+   "max_out": 65536,
+   "caps": {
+    "tools": true,
+    "vision": false,
+    "reasoning": true,
+    "json": true,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "fa15a86e7f8a"
+  },
+  {
+   "platform": "groq",
+   "id": "whisper-large-v3-turbo",
+   "name": "Whisper Large V3 Turbo",
+   "context": 448,
+   "max_out": 448,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": true,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "audio"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "ec06295e47be"
+  },
+  {
+   "platform": "groq",
+   "id": "meta-llama/llama-prompt-guard-2-86m",
+   "name": "Prompt Guard 2 86M",
+   "context": 512,
+   "max_out": 512,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": true,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "7ce56714a315"
   },
   {
    "platform": "nvidia",
@@ -5628,13 +5628,7 @@
  ],
  "radar": {
   "baseline": false,
-  "added": [
-   {
-    "key": "openrouter::xingchen-agi/xing4.0-29b-a4b:free",
-    "name": "XingChen: Xing4.0 29B A4B (free)",
-    "platform": "openrouter"
-   }
-  ],
+  "added": [],
   "removed": [],
   "changed": []
  },
