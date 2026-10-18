@@ -287,5 +287,39 @@
    "vision": false
   },
   "verified_at": "2026-10-11T02:18:11+00:00"
+ },
+ "openrouter::nvidia/nemotron-3.5-super-vl:free": {
+  "model": "nvidia/nemotron-3.5-super-vl:free",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": true,
+  "vision": true,
+  "tested": {
+   "chat": true,
+   "tools": true,
+   "vision": true
+  },
+  "declared": {
+   "tools": true,
+   "vision": true
+  },
+  "verified_at": "2026-10-18T07:10:53+00:00"
+ },
+ "openrouter::google/gemma-4-31b-it:free": {
+  "model": "google/gemma-4-31b-it:free",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": false,
+  "vision": false,
+  "tested": {
+   "chat": true,
+   "tools": false,
+   "vision": false
+  },
+  "declared": {
+   "tools": true,
+   "vision": true
+  },
+  "verified_at": "2026-10-18T07:11:33+00:00"
  }
 }

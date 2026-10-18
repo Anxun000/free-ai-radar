@@ -1,5 +1,5 @@
 {
- "probed_at": "2026-10-11T02:17:08+00:00",
+ "probed_at": "2026-10-18T07:10:00+00:00",
  "counts": {
   "callable": 13,
   "agentic_only": 2,
@@ -8,17 +8,17 @@
   "error": 0
  },
  "results": {
-  "inclusionai/ling-3.1-flash": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
-   "name": "inclusionAI: Ling 3.1 Flash"
+  "xingchen-agi/xing4.0-29b-a4b:free": {
+   "verdict": "congested",
+   "http": 429,
+   "message": "Provider returned error",
+   "name": "XingChen: Xing4.0 29B A4B (free)"
   },
-  "apodex/apodex-1.1-mini:free": {
+  "nvidia/nemotron-3.5-super-vl:free": {
    "verdict": "callable",
    "http": 200,
    "message": "",
-   "name": "Apodex: Apodex 1.1 Mini (free)"
+   "name": "NVIDIA: Nemotron 3.5 Super VL (free)"
   },
   "dots-studio/dots-3-note-preview:free": {
    "verdict": "callable",
@@ -93,9 +93,9 @@
    "name": "Google: Gemma 4 26B A4B  (free)"
   },
   "google/gemma-4-31b-it:free": {
-   "verdict": "congested",
-   "http": 429,
-   "message": "Provider returned error",
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
    "name": "Google: Gemma 4 31B (free)"
   },
   "google/lyria-3-pro-preview": {
