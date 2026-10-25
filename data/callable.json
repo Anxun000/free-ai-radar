@@ -1,17 +1,23 @@
 {
- "probed_at": "2026-10-18T07:10:00+00:00",
+ "probed_at": "2026-10-25T07:30:42+00:00",
  "counts": {
-  "callable": 13,
+  "callable": 10,
   "agentic_only": 2,
-  "congested": 2,
+  "congested": 5,
   "not_chat": 2,
-  "error": 0
+  "error": 1
  },
  "results": {
+  "recursive/flint-v1.0:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "Recursive: Flint (free)"
+  },
   "xingchen-agi/xing4.0-29b-a4b:free": {
-   "verdict": "congested",
-   "http": 429,
-   "message": "Provider returned error",
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
    "name": "XingChen: Xing4.0 29B A4B (free)"
   },
   "nvidia/nemotron-3.5-super-vl:free": {
@@ -27,9 +33,9 @@
    "name": "Dots Studio: Dots3-Note Preview (free)"
   },
   "liquid/lfm-2.5-2.6b:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
+   "verdict": "congested",
+   "http": 429,
+   "message": "Provider returned error",
    "name": "LiquidAI: LFM2.5-2.6B (free)"
   },
   "nvidia/nemotron-3.5-lightning:free": {
@@ -45,9 +51,9 @@
    "name": "Thinking Machines: Inkling Small (free)"
   },
   "poolside/laguna-s-2.1:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
+   "verdict": "congested",
+   "http": 429,
+   "message": "Provider returned error",
    "name": "Poolside: Laguna S 2.1 (free)"
   },
   "thinkingmachines/inkling:free": {
@@ -57,9 +63,9 @@
    "name": "Thinking Machines: Inkling (free)"
   },
   "poolside/laguna-xs-2.1:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
+   "verdict": "congested",
+   "http": 429,
+   "message": "Provider returned error",
    "name": "Poolside: Laguna XS 2.1 (free)"
   },
   "cohere/north-mini-code:free": {
@@ -93,9 +99,9 @@
    "name": "Google: Gemma 4 26B A4B  (free)"
   },
   "google/gemma-4-31b-it:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
+   "verdict": "congested",
+   "http": 429,
+   "message": "Provider returned error",
    "name": "Google: Gemma 4 31B (free)"
   },
   "google/lyria-3-pro-preview": {
@@ -111,9 +117,9 @@
    "name": "Google: Lyria 3 Clip Preview"
   },
   "nvidia/nemotron-3-super-120b-a12b:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
+   "verdict": "error",
+   "http": 404,
+   "message": "Provider returned error",
    "name": "NVIDIA: Nemotron 3 Super (free)"
   },
   "openrouter/free": {

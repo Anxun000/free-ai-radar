@@ -321,5 +321,39 @@
    "vision": true
   },
   "verified_at": "2026-10-18T07:11:33+00:00"
+ },
+ "openrouter::recursive/flint-v1.0:free": {
+  "model": "recursive/flint-v1.0:free",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": true,
+  "vision": false,
+  "tested": {
+   "chat": true,
+   "tools": true,
+   "vision": true
+  },
+  "declared": {
+   "tools": true,
+   "vision": false
+  },
+  "verified_at": "2026-10-25T07:31:12+00:00"
+ },
+ "openrouter::xingchen-agi/xing4.0-29b-a4b:free": {
+  "model": "xingchen-agi/xing4.0-29b-a4b:free",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": true,
+  "vision": false,
+  "tested": {
+   "chat": true,
+   "tools": true,
+   "vision": true
+  },
+  "declared": {
+   "tools": true,
+   "vision": false
+  },
+  "verified_at": "2026-10-25T07:31:39+00:00"
  }
 }
