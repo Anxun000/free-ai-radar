@@ -1,23 +1,23 @@
 {
- "probed_at": "2026-10-25T07:30:42+00:00",
+ "probed_at": "2026-11-01T09:00:36+00:00",
  "counts": {
-  "callable": 10,
+  "callable": 8,
   "agentic_only": 2,
-  "congested": 5,
+  "congested": 3,
   "not_chat": 2,
-  "error": 1
+  "error": 2
  },
  "results": {
   "recursive/flint-v1.0:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
+   "verdict": "error",
+   "http": 503,
+   "message": "Provider returned error",
    "name": "Recursive: Flint (free)"
   },
   "xingchen-agi/xing4.0-29b-a4b:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
+   "verdict": "congested",
+   "http": 429,
+   "message": "Provider returned error",
    "name": "XingChen: Xing4.0 29B A4B (free)"
   },
   "nvidia/nemotron-3.5-super-vl:free": {
@@ -50,23 +50,11 @@
    "message": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
    "name": "Thinking Machines: Inkling Small (free)"
   },
-  "poolside/laguna-s-2.1:free": {
-   "verdict": "congested",
-   "http": 429,
-   "message": "Provider returned error",
-   "name": "Poolside: Laguna S 2.1 (free)"
-  },
   "thinkingmachines/inkling:free": {
    "verdict": "agentic_only",
    "http": 403,
    "message": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
    "name": "Thinking Machines: Inkling (free)"
-  },
-  "poolside/laguna-xs-2.1:free": {
-   "verdict": "congested",
-   "http": 429,
-   "message": "Provider returned error",
-   "name": "Poolside: Laguna XS 2.1 (free)"
   },
   "cohere/north-mini-code:free": {
    "verdict": "callable",
@@ -75,9 +63,9 @@
    "name": "Cohere: North Mini Code (free)"
   },
   "nvidia/nemotron-3.5-content-safety:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
+   "verdict": "error",
+   "http": 404,
+   "message": "Provider returned error",
    "name": "NVIDIA: Nemotron 3.5 Content Safety (free)"
   },
   "nvidia/nemotron-3-ultra-550b-a55b:free": {
@@ -93,9 +81,9 @@
    "name": "NVIDIA: Nemotron 3 Nano Omni (free)"
   },
   "google/gemma-4-26b-a4b-it:free": {
-   "verdict": "congested",
-   "http": 429,
-   "message": "Provider returned error",
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
    "name": "Google: Gemma 4 26B A4B  (free)"
   },
   "google/gemma-4-31b-it:free": {
@@ -115,12 +103,6 @@
    "http": null,
    "message": "输出模态：text, audio（需专用接口）",
    "name": "Google: Lyria 3 Clip Preview"
-  },
-  "nvidia/nemotron-3-super-120b-a12b:free": {
-   "verdict": "error",
-   "http": 404,
-   "message": "Provider returned error",
-   "name": "NVIDIA: Nemotron 3 Super (free)"
   },
   "openrouter/free": {
    "verdict": "callable",
