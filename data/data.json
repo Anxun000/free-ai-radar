@@ -1,18 +1,18 @@
 {
- "generated_at": "2026-11-04T07:21:52+00:00",
- "generated_date": "2026-11-04",
- "prev_snapshot": "2026-11-03",
+ "generated_at": "2026-11-05T07:47:24+00:00",
+ "generated_date": "2026-11-05",
+ "prev_snapshot": "2026-11-04",
  "stats": {
   "platforms_configured": 8,
   "platforms_ok": 8,
   "platforms_carried": 0,
-  "total_models": 192,
+  "total_models": 190,
   "stale_models": 0,
-  "with_tools": 36,
-  "with_vision": 63,
-  "with_reasoning": 65,
+  "with_tools": 34,
+  "with_vision": 61,
+  "with_reasoning": 63,
   "with_json": 32,
-  "with_tools_and_vision": 17
+  "with_tools_and_vision": 15
  },
  "platforms": {
   "openrouter": {
@@ -27,9 +27,9 @@
    "note": "单 key 聚合 20 个月费为 0 的模型，另有 openrouter/free 路由自动挑选可用免费模型",
    "key_env": "OPENROUTER_API_KEY",
    "api_gives": "full",
-   "verified": "2026-11-04",
+   "verified": "2026-11-05",
    "configured": "https://openrouter.ai/api/v1/models",
-   "model_count": 18,
+   "model_count": 16,
    "fetch": "ok"
   },
   "gemini": {
@@ -44,7 +44,7 @@
    "note": "免绑卡。注意：免费档的数据可能被用于改进产品（欧洲经济区/英国/瑞士除外）",
    "key_env": "GEMINI_API_KEY",
    "api_gives": "partial",
-   "verified": "2026-11-04",
+   "verified": "2026-11-05",
    "configured": "https://generativelanguage.googleapis.com/v1beta/models",
    "model_count": 46,
    "fetch": "ok"
@@ -61,7 +61,7 @@
    "note": "推理速度最快的免费档之一。默认不保留数据，可开启零数据保留",
    "key_env": "GROQ_API_KEY",
    "api_gives": "partial",
-   "verified": "2026-11-04",
+   "verified": "2026-11-05",
    "configured": "https://api.groq.com/openai/v1/models",
    "model_count": 11,
    "fetch": "ok"
@@ -78,7 +78,7 @@
    "note": "托管大量开源模型。注册需手机号验证。会话内容不存储",
    "key_env": "NVIDIA_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-04",
+   "verified": "2026-11-05",
    "configured": "https://integrate.api.nvidia.com/v1/models",
    "model_count": 85,
    "fetch": "ok"
@@ -95,7 +95,7 @@
    "note": "国内直连。GLM 的 Flash 系列是长期免费的轻量档",
    "key_env": "ZHIPU_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-04",
+   "verified": "2026-11-05",
    "configured": "https://open.bigmodel.cn/api/paas/v4/models",
    "model_count": 12,
    "fetch": "ok"
@@ -112,7 +112,7 @@
    "note": "国内直连。LongCat-2.5-Preview：1.6T 总参 / 约 48B 激活 / 1M 上下文 / 原生多模态，强化 Coding",
    "key_env": "LONGCAT_API_KEY",
    "api_gives": "partial",
-   "verified": "2026-11-04",
+   "verified": "2026-11-05",
    "configured": "https://api.longcat.chat/openai/v1/models",
    "model_count": 3,
    "fetch": "ok"
@@ -129,7 +129,7 @@
    "note": "国内直连。同时提供 OpenAI 兼容端点与 Anthropic Messages 兼容端点（/v1/messages）",
    "key_env": "SENSENOVA_API_KEY",
    "api_gives": "full",
-   "verified": "2026-11-04",
+   "verified": "2026-11-05",
    "configured": "https://token.sensenova.cn/v1/models",
    "model_count": 8,
    "fetch": "ok"
@@ -146,7 +146,7 @@
    "note": "国内直连。含文本、图像、视频生成模型",
    "key_env": "AGNES_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-04",
+   "verified": "2026-11-05",
    "configured": "https://apihub.agnes-ai.com/v1/models",
    "model_count": 9,
    "fetch": "ok"
@@ -163,7 +163,7 @@
    "note": "需要 account_id + API Token 两个值配套。数据不用于训练",
    "key_env": "CLOUDFLARE_API_TOKEN",
    "api_gives": "minimal",
-   "verified": "2026-11-04",
+   "verified": "2026-11-05",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -180,7 +180,7 @@
    "note": "默认用你的数据训练模型，可在后台关闭",
    "key_env": "MISTRAL_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-04",
+   "verified": "2026-11-05",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -197,7 +197,7 @@
    "note": "仅限开发/评估用途",
    "key_env": "COHERE_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-04",
+   "verified": "2026-11-05",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -214,7 +214,7 @@
    "note": "聚合 200+ 模型的推理服务，额度很小，适合偶尔试",
    "key_env": "HUGGINGFACE_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-04",
+   "verified": "2026-11-05",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -465,78 +465,6 @@
    "quota": "20 请求/分；50 请求/日（一次性充 $10 后升至 1000/日）",
    "platform_label": "OpenRouter",
    "fp": "6001d27bd78e"
-  },
-  {
-   "platform": "openrouter",
-   "id": "thinkingmachines/inkling-small:free",
-   "name": "Thinking Machines: Inkling Small (free)",
-   "context": 1048576,
-   "max_out": 262144,
-   "caps": {
-    "tools": true,
-    "vision": true,
-    "reasoning": true,
-    "json": false,
-    "audio": true,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text",
-    "image",
-    "audio"
-   ],
-   "cap_source": "api",
-   "extra": {
-    "expiration": "2026-11-04",
-    "knowledge_cutoff": null,
-    "hf_id": "thinkingmachines/Inkling-Small"
-   },
-   "free_kind": "permanent",
-   "base_url": "https://openrouter.ai/api/v1",
-   "signup_url": "https://openrouter.ai/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "20 请求/分；50 请求/日（一次性充 $10 后升至 1000/日）",
-   "platform_label": "OpenRouter",
-   "fp": "df88a0a3d9d9"
-  },
-  {
-   "platform": "openrouter",
-   "id": "thinkingmachines/inkling:free",
-   "name": "Thinking Machines: Inkling (free)",
-   "context": 1048576,
-   "max_out": 262144,
-   "caps": {
-    "tools": true,
-    "vision": true,
-    "reasoning": true,
-    "json": false,
-    "audio": true,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text",
-    "image",
-    "audio"
-   ],
-   "cap_source": "api",
-   "extra": {
-    "expiration": "2026-11-04",
-    "knowledge_cutoff": null,
-    "hf_id": "thinkingmachines/Inkling"
-   },
-   "free_kind": "permanent",
-   "base_url": "https://openrouter.ai/api/v1",
-   "signup_url": "https://openrouter.ai/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "20 请求/分；50 请求/日（一次性充 $10 后升至 1000/日）",
-   "platform_label": "OpenRouter",
-   "fp": "df88a0a3d9d9"
   },
   {
    "platform": "openrouter",
@@ -2237,21 +2165,22 @@
   },
   {
    "platform": "groq",
-   "id": "meta-llama/llama-prompt-guard-2-22m",
-   "name": "Llama Prompt Guard 2 22M",
-   "context": 512,
-   "max_out": 512,
+   "id": "qwen/qwen3.8-27b",
+   "name": "Qwen/Qwen3.8-27B",
+   "context": 131072,
+   "max_out": 16384,
    "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
+    "tools": true,
+    "vision": true,
+    "reasoning": true,
+    "json": true,
     "audio": false,
     "video": false,
     "websearch": false
    },
    "input_modalities": [
-    "text"
+    "text",
+    "image"
    ],
    "cap_source": "api",
    "free_kind": "permanent",
@@ -2262,12 +2191,12 @@
    "region": "国际",
    "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
    "platform_label": "Groq",
-   "fp": "e4c13573cb6e"
+   "fp": "c1c4add1f841"
   },
   {
    "platform": "groq",
-   "id": "openai/gpt-oss-20b",
-   "name": "GPT OSS 20B",
+   "id": "openai/gpt-oss-safeguard-20b",
+   "name": "Safety GPT OSS 20B",
    "context": 131072,
    "max_out": 65536,
    "caps": {
@@ -2295,15 +2224,15 @@
   },
   {
    "platform": "groq",
-   "id": "allam-2-7b",
-   "name": "ALLaM-2-7b",
-   "context": 4096,
-   "max_out": 4096,
+   "id": "canopylabs/orpheus-v1-english",
+   "name": "Canopy Labs Orpheus V1 English",
+   "context": 4000,
+   "max_out": 50000,
    "caps": {
     "tools": false,
     "vision": false,
     "reasoning": false,
-    "json": true,
+    "json": false,
     "audio": false,
     "video": false,
     "websearch": false
@@ -2320,36 +2249,7 @@
    "region": "国际",
    "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
    "platform_label": "Groq",
-   "fp": "68feda92e2fe"
-  },
-  {
-   "platform": "groq",
-   "id": "whisper-large-v3-turbo",
-   "name": "Whisper Large V3 Turbo",
-   "context": 448,
-   "max_out": 448,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": true,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "audio"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "ec06295e47be"
+   "fp": "6bac7e75adf3"
   },
   {
    "platform": "groq",
@@ -2382,45 +2282,15 @@
   },
   {
    "platform": "groq",
-   "id": "qwen/qwen3.8-27b",
-   "name": "Qwen/Qwen3.8-27B",
-   "context": 131072,
-   "max_out": 16384,
-   "caps": {
-    "tools": true,
-    "vision": true,
-    "reasoning": true,
-    "json": true,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text",
-    "image"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "c1c4add1f841"
-  },
-  {
-   "platform": "groq",
-   "id": "canopylabs/orpheus-arabic-saudi",
-   "name": "Canopy Labs Orpheus Arabic Saudi",
-   "context": 4000,
-   "max_out": 50000,
+   "id": "allam-2-7b",
+   "name": "ALLaM-2-7b",
+   "context": 4096,
+   "max_out": 4096,
    "caps": {
     "tools": false,
     "vision": false,
     "reasoning": false,
-    "json": false,
+    "json": true,
     "audio": false,
     "video": false,
     "websearch": false
@@ -2437,12 +2307,12 @@
    "region": "国际",
    "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
    "platform_label": "Groq",
-   "fp": "6bac7e75adf3"
+   "fp": "68feda92e2fe"
   },
   {
    "platform": "groq",
-   "id": "canopylabs/orpheus-v1-english",
-   "name": "Canopy Labs Orpheus V1 English",
+   "id": "canopylabs/orpheus-arabic-saudi",
+   "name": "Canopy Labs Orpheus Arabic Saudi",
    "context": 4000,
    "max_out": 50000,
    "caps": {
@@ -2499,8 +2369,8 @@
   },
   {
    "platform": "groq",
-   "id": "openai/gpt-oss-safeguard-20b",
-   "name": "Safety GPT OSS 20B",
+   "id": "openai/gpt-oss-20b",
+   "name": "GPT OSS 20B",
    "context": 131072,
    "max_out": 65536,
    "caps": {
@@ -2525,6 +2395,64 @@
    "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
    "platform_label": "Groq",
    "fp": "fa15a86e7f8a"
+  },
+  {
+   "platform": "groq",
+   "id": "meta-llama/llama-prompt-guard-2-22m",
+   "name": "Llama Prompt Guard 2 22M",
+   "context": 512,
+   "max_out": 512,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "e4c13573cb6e"
+  },
+  {
+   "platform": "groq",
+   "id": "whisper-large-v3-turbo",
+   "name": "Whisper Large V3 Turbo",
+   "context": 448,
+   "max_out": 448,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": true,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "audio"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "ec06295e47be"
   },
   {
    "platform": "groq",
@@ -5465,39 +5393,6 @@
   },
   {
    "platform": "sensenova",
-   "id": "deepseek-v4.1-flash",
-   "name": "deepseek-v4.1-flash",
-   "context": 1048576,
-   "max_out": 65536,
-   "caps": {
-    "tools": true,
-    "vision": false,
-    "reasoning": true,
-    "json": true,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text"
-   ],
-   "cap_source": "api",
-   "extra": {
-    "free_by_price": true,
-    "quantization": "fp8"
-   },
-   "free_kind": "limited",
-   "base_url": "https://token.sensenova.cn/v1",
-   "signup_url": "https://platform.sensenova.cn/console/keys",
-   "needs_card": false,
-   "needs_vpn": false,
-   "region": "国内",
-   "quota": "公测期全免费；滚动 5 小时通用积分 6 万、周额度 60 万；Flash-Lite 约 1500 次/5小时",
-   "platform_label": "商汤日日新",
-   "fp": "2f466db1d169"
-  },
-  {
-   "platform": "sensenova",
    "id": "sensenova-6.8-flash",
    "name": "sensenova-6.8-flash",
    "context": 262144,
@@ -5529,6 +5424,39 @@
    "quota": "公测期全免费；滚动 5 小时通用积分 6 万、周额度 60 万；Flash-Lite 约 1500 次/5小时",
    "platform_label": "商汤日日新",
    "fp": "5c704f7bd81d"
+  },
+  {
+   "platform": "sensenova",
+   "id": "glm-5.3",
+   "name": "glm-5.3",
+   "context": 1048576,
+   "max_out": 131072,
+   "caps": {
+    "tools": true,
+    "vision": false,
+    "reasoning": true,
+    "json": true,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "extra": {
+    "free_by_price": true,
+    "quantization": "fp8"
+   },
+   "free_kind": "limited",
+   "base_url": "https://token.sensenova.cn/v1",
+   "signup_url": "https://platform.sensenova.cn/console/keys",
+   "needs_card": false,
+   "needs_vpn": false,
+   "region": "国内",
+   "quota": "公测期全免费；滚动 5 小时通用积分 6 万、周额度 60 万；Flash-Lite 约 1500 次/5小时",
+   "platform_label": "商汤日日新",
+   "fp": "8287cca81e6e"
   },
   {
    "platform": "agnes",
@@ -5778,23 +5706,29 @@
   "baseline": false,
   "added": [
    {
-    "key": "openrouter::stealth/crouton-alpha",
-    "name": "Crouton Alpha",
-    "platform": "openrouter"
+    "key": "sensenova::glm-5.3",
+    "name": "glm-5.3",
+    "platform": "sensenova"
    }
   ],
-  "removed": [],
-  "changed": [
+  "removed": [
    {
-    "key": "longcat::LongCat-2.5",
-    "name": "LongCat-2.5",
-    "platform": "longcat",
-    "diffs": [
-     "vision +",
-     "video +"
-    ]
+    "key": "openrouter::thinkingmachines/inkling-small:free",
+    "name": "Thinking Machines: Inkling Small (free)",
+    "platform": "openrouter"
+   },
+   {
+    "key": "openrouter::thinkingmachines/inkling:free",
+    "name": "Thinking Machines: Inkling (free)",
+    "platform": "openrouter"
+   },
+   {
+    "key": "sensenova::deepseek-v4.1-flash",
+    "name": "deepseek-v4.1-flash",
+    "platform": "sensenova"
    }
-  ]
+  ],
+  "changed": []
  },
  "offline_blacklist": [
   {
