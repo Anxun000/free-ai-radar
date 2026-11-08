@@ -355,5 +355,39 @@
    "vision": false
   },
   "verified_at": "2026-10-25T07:31:39+00:00"
+ },
+ "openrouter::liquid/lfm-3-1.7b:free": {
+  "model": "liquid/lfm-3-1.7b:free",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": true,
+  "vision": false,
+  "tested": {
+   "chat": true,
+   "tools": true,
+   "vision": true
+  },
+  "declared": {
+   "tools": true,
+   "vision": false
+  },
+  "verified_at": "2026-11-08T08:51:41+00:00"
+ },
+ "openrouter::stealth/crouton-alpha": {
+  "model": "stealth/crouton-alpha",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": false,
+  "vision": true,
+  "tested": {
+   "chat": true,
+   "tools": true,
+   "vision": true
+  },
+  "declared": {
+   "tools": true,
+   "vision": true
+  },
+  "verified_at": "2026-11-08T08:51:47+00:00"
  }
 }

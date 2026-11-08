@@ -1,23 +1,35 @@
 {
- "probed_at": "2026-11-01T09:00:36+00:00",
+ "probed_at": "2026-11-08T08:50:31+00:00",
  "counts": {
-  "callable": 8,
-  "agentic_only": 2,
-  "congested": 3,
+  "callable": 12,
+  "agentic_only": 0,
+  "congested": 2,
   "not_chat": 2,
-  "error": 2
+  "error": 0
  },
  "results": {
+  "liquid/lfm-3-1.7b:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "LiquidAI: LFM3-1.7B (free)"
+  },
+  "stealth/crouton-alpha": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
+   "name": "Crouton Alpha"
+  },
   "recursive/flint-v1.0:free": {
-   "verdict": "error",
-   "http": 503,
-   "message": "Provider returned error",
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
    "name": "Recursive: Flint (free)"
   },
   "xingchen-agi/xing4.0-29b-a4b:free": {
-   "verdict": "congested",
-   "http": 429,
-   "message": "Provider returned error",
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
    "name": "XingChen: Xing4.0 29B A4B (free)"
   },
   "nvidia/nemotron-3.5-super-vl:free": {
@@ -33,9 +45,9 @@
    "name": "Dots Studio: Dots3-Note Preview (free)"
   },
   "liquid/lfm-2.5-2.6b:free": {
-   "verdict": "congested",
-   "http": 429,
-   "message": "Provider returned error",
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
    "name": "LiquidAI: LFM2.5-2.6B (free)"
   },
   "nvidia/nemotron-3.5-lightning:free": {
@@ -44,29 +56,11 @@
    "message": "",
    "name": "NVIDIA: Nemotron 3.5 Lightning (free)"
   },
-  "thinkingmachines/inkling-small:free": {
-   "verdict": "agentic_only",
-   "http": 403,
-   "message": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
-   "name": "Thinking Machines: Inkling Small (free)"
-  },
-  "thinkingmachines/inkling:free": {
-   "verdict": "agentic_only",
-   "http": 403,
-   "message": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
-   "name": "Thinking Machines: Inkling (free)"
-  },
   "cohere/north-mini-code:free": {
    "verdict": "callable",
    "http": 200,
    "message": "",
    "name": "Cohere: North Mini Code (free)"
-  },
-  "nvidia/nemotron-3.5-content-safety:free": {
-   "verdict": "error",
-   "http": 404,
-   "message": "Provider returned error",
-   "name": "NVIDIA: Nemotron 3.5 Content Safety (free)"
   },
   "nvidia/nemotron-3-ultra-550b-a55b:free": {
    "verdict": "callable",
@@ -81,9 +75,9 @@
    "name": "NVIDIA: Nemotron 3 Nano Omni (free)"
   },
   "google/gemma-4-26b-a4b-it:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
+   "verdict": "congested",
+   "http": 429,
+   "message": "Provider returned error",
    "name": "Google: Gemma 4 26B A4B  (free)"
   },
   "google/gemma-4-31b-it:free": {
