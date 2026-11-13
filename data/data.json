@@ -1,18 +1,18 @@
 {
- "generated_at": "2026-11-12T08:03:56+00:00",
- "generated_date": "2026-11-12",
- "prev_snapshot": "2026-11-11",
+ "generated_at": "2026-11-13T07:41:34+00:00",
+ "generated_date": "2026-11-13",
+ "prev_snapshot": "2026-11-12",
  "stats": {
   "platforms_configured": 8,
   "platforms_ok": 8,
   "platforms_carried": 0,
-  "total_models": 192,
+  "total_models": 194,
   "stale_models": 0,
-  "with_tools": 35,
-  "with_vision": 62,
-  "with_reasoning": 65,
-  "with_json": 32,
-  "with_tools_and_vision": 15
+  "with_tools": 37,
+  "with_vision": 64,
+  "with_reasoning": 68,
+  "with_json": 34,
+  "with_tools_and_vision": 16
  },
  "platforms": {
   "openrouter": {
@@ -27,9 +27,9 @@
    "note": "单 key 聚合 20 个月费为 0 的模型，另有 openrouter/free 路由自动挑选可用免费模型",
    "key_env": "OPENROUTER_API_KEY",
    "api_gives": "full",
-   "verified": "2026-11-12",
+   "verified": "2026-11-13",
    "configured": "https://openrouter.ai/api/v1/models",
-   "model_count": 16,
+   "model_count": 18,
    "fetch": "ok"
   },
   "gemini": {
@@ -44,9 +44,9 @@
    "note": "免绑卡。注意：免费档的数据可能被用于改进产品（欧洲经济区/英国/瑞士除外）",
    "key_env": "GEMINI_API_KEY",
    "api_gives": "partial",
-   "verified": "2026-11-12",
+   "verified": "2026-11-13",
    "configured": "https://generativelanguage.googleapis.com/v1beta/models",
-   "model_count": 48,
+   "model_count": 49,
    "fetch": "ok"
   },
   "groq": {
@@ -61,7 +61,7 @@
    "note": "推理速度最快的免费档之一。默认不保留数据，可开启零数据保留",
    "key_env": "GROQ_API_KEY",
    "api_gives": "partial",
-   "verified": "2026-11-12",
+   "verified": "2026-11-13",
    "configured": "https://api.groq.com/openai/v1/models",
    "model_count": 11,
    "fetch": "ok"
@@ -78,9 +78,9 @@
    "note": "托管大量开源模型。注册需手机号验证。会话内容不存储",
    "key_env": "NVIDIA_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-12",
+   "verified": "2026-11-13",
    "configured": "https://integrate.api.nvidia.com/v1/models",
-   "model_count": 84,
+   "model_count": 83,
    "fetch": "ok"
   },
   "zhipu": {
@@ -95,7 +95,7 @@
    "note": "国内直连。GLM 的 Flash 系列是长期免费的轻量档",
    "key_env": "ZHIPU_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-12",
+   "verified": "2026-11-13",
    "configured": "https://open.bigmodel.cn/api/paas/v4/models",
    "model_count": 12,
    "fetch": "ok"
@@ -112,7 +112,7 @@
    "note": "国内直连。LongCat-2.5-Preview：1.6T 总参 / 约 48B 激活 / 1M 上下文 / 原生多模态，强化 Coding",
    "key_env": "LONGCAT_API_KEY",
    "api_gives": "partial",
-   "verified": "2026-11-12",
+   "verified": "2026-11-13",
    "configured": "https://api.longcat.chat/openai/v1/models",
    "model_count": 3,
    "fetch": "ok"
@@ -129,7 +129,7 @@
    "note": "国内直连。同时提供 OpenAI 兼容端点与 Anthropic Messages 兼容端点（/v1/messages）",
    "key_env": "SENSENOVA_API_KEY",
    "api_gives": "full",
-   "verified": "2026-11-12",
+   "verified": "2026-11-13",
    "configured": "https://token.sensenova.cn/v1/models",
    "model_count": 8,
    "fetch": "ok"
@@ -146,7 +146,7 @@
    "note": "国内直连。含文本、图像、视频生成模型",
    "key_env": "AGNES_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-12",
+   "verified": "2026-11-13",
    "configured": "https://apihub.agnes-ai.com/v1/models",
    "model_count": 10,
    "fetch": "ok"
@@ -163,7 +163,7 @@
    "note": "需要 account_id + API Token 两个值配套。数据不用于训练",
    "key_env": "CLOUDFLARE_API_TOKEN",
    "api_gives": "minimal",
-   "verified": "2026-11-12",
+   "verified": "2026-11-13",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -180,7 +180,7 @@
    "note": "默认用你的数据训练模型，可在后台关闭",
    "key_env": "MISTRAL_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-12",
+   "verified": "2026-11-13",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -197,7 +197,7 @@
    "note": "仅限开发/评估用途",
    "key_env": "COHERE_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-12",
+   "verified": "2026-11-13",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -214,7 +214,7 @@
    "note": "聚合 200+ 模型的推理服务，额度很小，适合偶尔试",
    "key_env": "HUGGINGFACE_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-12",
+   "verified": "2026-11-13",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -278,7 +278,7 @@
    "extra": {
     "expiration": null,
     "knowledge_cutoff": null,
-    "hf_id": null
+    "hf_id": "thinkingmachines/Inkling-2-Small"
    },
    "free_kind": "permanent",
    "base_url": "https://openrouter.ai/api/v1",
@@ -323,6 +323,41 @@
    "quota": "20 请求/分；50 请求/日（一次性充 $10 后升至 1000/日）",
    "platform_label": "OpenRouter",
    "fp": "643a3245dfe7"
+  },
+  {
+   "platform": "openrouter",
+   "id": "particle-ai/particle-1:free",
+   "name": "Particle AI: Particle-1 (free)",
+   "context": 1048576,
+   "max_out": 131072,
+   "caps": {
+    "tools": true,
+    "vision": true,
+    "reasoning": true,
+    "json": true,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text",
+    "image"
+   ],
+   "cap_source": "api",
+   "extra": {
+    "expiration": null,
+    "knowledge_cutoff": null,
+    "hf_id": null
+   },
+   "free_kind": "permanent",
+   "base_url": "https://openrouter.ai/api/v1",
+   "signup_url": "https://openrouter.ai/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "20 请求/分；50 请求/日（一次性充 $10 后升至 1000/日）",
+   "platform_label": "OpenRouter",
+   "fp": "be027cd87f36"
   },
   {
    "platform": "openrouter",
@@ -393,6 +428,40 @@
    "quota": "20 请求/分；50 请求/日（一次性充 $10 后升至 1000/日）",
    "platform_label": "OpenRouter",
    "fp": "2e0e259536e8"
+  },
+  {
+   "platform": "openrouter",
+   "id": "apodex/apodex-1.1-mini:free",
+   "name": "Apodex: Apodex 1.1 Mini (free)",
+   "context": 262144,
+   "max_out": 235929,
+   "caps": {
+    "tools": true,
+    "vision": false,
+    "reasoning": true,
+    "json": true,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "extra": {
+    "expiration": null,
+    "knowledge_cutoff": null,
+    "hf_id": null
+   },
+   "free_kind": "permanent",
+   "base_url": "https://openrouter.ai/api/v1",
+   "signup_url": "https://openrouter.ai/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "20 请求/分；50 请求/日（一次性充 $10 后升至 1000/日）",
+   "platform_label": "OpenRouter",
+   "fp": "0d6befb85a59"
   },
   {
    "platform": "openrouter",
@@ -1801,6 +1870,36 @@
   },
   {
    "platform": "gemini",
+   "id": "gemini-4-hydrogen",
+   "name": "Gemini 4 Hydrogen",
+   "context": 1048576,
+   "max_out": 65536,
+   "caps": {
+    "tools": false,
+    "vision": true,
+    "reasoning": true,
+    "json": false,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text",
+    "image"
+   ],
+   "cap_source": "doc",
+   "free_kind": "permanent",
+   "base_url": "https://generativelanguage.googleapis.com/v1beta",
+   "signup_url": "https://aistudio.google.com/apikey",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "免费档限速官方不公布，在 AI Studio 内按项目显示",
+   "platform_label": "Google AI Studio",
+   "fp": "a2b057801ea3"
+  },
+  {
+   "platform": "gemini",
    "id": "lyria-3-clip-preview",
    "name": "Lyria 3 Clip Preview",
    "context": 1048576,
@@ -2221,6 +2320,64 @@
   },
   {
    "platform": "groq",
+   "id": "openai/gpt-oss-20b",
+   "name": "GPT OSS 20B",
+   "context": 131072,
+   "max_out": 65536,
+   "caps": {
+    "tools": true,
+    "vision": false,
+    "reasoning": true,
+    "json": true,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "fa15a86e7f8a"
+  },
+  {
+   "platform": "groq",
+   "id": "whisper-large-v3-turbo",
+   "name": "Whisper Large V3 Turbo",
+   "context": 448,
+   "max_out": 448,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": true,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "audio"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "ec06295e47be"
+  },
+  {
+   "platform": "groq",
    "id": "meta-llama/llama-prompt-guard-2-86m",
    "name": "Prompt Guard 2 86M",
    "context": 512,
@@ -2279,66 +2436,8 @@
   },
   {
    "platform": "groq",
-   "id": "meta-llama/llama-prompt-guard-2-22m",
-   "name": "Llama Prompt Guard 2 22M",
-   "context": 512,
-   "max_out": 512,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "e4c13573cb6e"
-  },
-  {
-   "platform": "groq",
-   "id": "canopylabs/orpheus-v1-english",
-   "name": "Canopy Labs Orpheus V1 English",
-   "context": 4000,
-   "max_out": 50000,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "6bac7e75adf3"
-  },
-  {
-   "platform": "groq",
-   "id": "openai/gpt-oss-20b",
-   "name": "GPT OSS 20B",
+   "id": "openai/gpt-oss-safeguard-20b",
+   "name": "Safety GPT OSS 20B",
    "context": 131072,
    "max_out": 65536,
    "caps": {
@@ -2395,43 +2494,14 @@
   },
   {
    "platform": "groq",
-   "id": "whisper-large-v3-turbo",
-   "name": "Whisper Large V3 Turbo",
-   "context": 448,
-   "max_out": 448,
+   "id": "allam-2-7b",
+   "name": "ALLaM-2-7b",
+   "context": 4096,
+   "max_out": 4096,
    "caps": {
     "tools": false,
     "vision": false,
     "reasoning": false,
-    "json": false,
-    "audio": true,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "audio"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "ec06295e47be"
-  },
-  {
-   "platform": "groq",
-   "id": "openai/gpt-oss-safeguard-20b",
-   "name": "Safety GPT OSS 20B",
-   "context": 131072,
-   "max_out": 65536,
-   "caps": {
-    "tools": true,
-    "vision": false,
-    "reasoning": true,
     "json": true,
     "audio": false,
     "video": false,
@@ -2449,7 +2519,7 @@
    "region": "国际",
    "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
    "platform_label": "Groq",
-   "fp": "fa15a86e7f8a"
+   "fp": "68feda92e2fe"
   },
   {
    "platform": "groq",
@@ -2512,15 +2582,15 @@
   },
   {
    "platform": "groq",
-   "id": "allam-2-7b",
-   "name": "ALLaM-2-7b",
-   "context": 4096,
-   "max_out": 4096,
+   "id": "meta-llama/llama-prompt-guard-2-22m",
+   "name": "Llama Prompt Guard 2 22M",
+   "context": 512,
+   "max_out": 512,
    "caps": {
     "tools": false,
     "vision": false,
     "reasoning": false,
-    "json": true,
+    "json": false,
     "audio": false,
     "video": false,
     "websearch": false
@@ -2537,7 +2607,36 @@
    "region": "国际",
    "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
    "platform_label": "Groq",
-   "fp": "68feda92e2fe"
+   "fp": "e4c13573cb6e"
+  },
+  {
+   "platform": "groq",
+   "id": "canopylabs/orpheus-v1-english",
+   "name": "Canopy Labs Orpheus V1 English",
+   "context": 4000,
+   "max_out": 50000,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "6bac7e75adf3"
   },
   {
    "platform": "nvidia",
@@ -2813,33 +2912,6 @@
    "platform": "nvidia",
    "id": "google/deplot",
    "name": "google/deplot",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "google/diffusiongemma-26b-a4b-it",
-   "name": "google/diffusiongemma-26b-a4b-it",
    "context": null,
    "max_out": null,
    "caps": {
@@ -5762,12 +5834,28 @@
   "baseline": false,
   "added": [
    {
-    "key": "openrouter::baidu/ernie-5.5-flash-preview:free",
-    "name": "Baidu: ERNIE-5.5-Flash-Preview (free)",
+    "key": "openrouter::particle-ai/particle-1:free",
+    "name": "Particle AI: Particle-1 (free)",
     "platform": "openrouter"
+   },
+   {
+    "key": "openrouter::apodex/apodex-1.1-mini:free",
+    "name": "Apodex: Apodex 1.1 Mini (free)",
+    "platform": "openrouter"
+   },
+   {
+    "key": "gemini::gemini-4-hydrogen",
+    "name": "Gemini 4 Hydrogen",
+    "platform": "gemini"
    }
   ],
-  "removed": [],
+  "removed": [
+   {
+    "key": "nvidia::google/diffusiongemma-26b-a4b-it",
+    "name": "google/diffusiongemma-26b-a4b-it",
+    "platform": "nvidia"
+   }
+  ],
   "changed": []
  },
  "offline_blacklist": [
