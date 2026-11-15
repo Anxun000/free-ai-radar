@@ -389,5 +389,56 @@
    "vision": true
   },
   "verified_at": "2026-11-08T08:51:47+00:00"
+ },
+ "openrouter::baidu/ernie-5.5-flash-preview:free": {
+  "model": "baidu/ernie-5.5-flash-preview:free",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": true,
+  "vision": false,
+  "tested": {
+   "chat": true,
+   "tools": true,
+   "vision": true
+  },
+  "declared": {
+   "tools": true,
+   "vision": false
+  },
+  "verified_at": "2026-11-15T09:06:39+00:00"
+ },
+ "openrouter::particle-ai/particle-1:free": {
+  "model": "particle-ai/particle-1:free",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": true,
+  "vision": true,
+  "tested": {
+   "chat": true,
+   "tools": true,
+   "vision": true
+  },
+  "declared": {
+   "tools": true,
+   "vision": true
+  },
+  "verified_at": "2026-11-15T09:06:51+00:00"
+ },
+ "openrouter::inclusionai/ling-3.2-flash:free": {
+  "model": "inclusionai/ling-3.2-flash:free",
+  "platform": "openrouter",
+  "chat": true,
+  "tools": true,
+  "vision": true,
+  "tested": {
+   "chat": true,
+   "tools": true,
+   "vision": true
+  },
+  "declared": {
+   "tools": true,
+   "vision": true
+  },
+  "verified_at": "2026-11-15T09:07:17+00:00"
  }
 }
