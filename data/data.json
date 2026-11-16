@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-15T07:40:14+00:00",
- "generated_date": "2026-11-15",
- "prev_snapshot": "2026-11-14",
+ "generated_at": "2026-11-16T07:45:50+00:00",
+ "generated_date": "2026-11-16",
+ "prev_snapshot": "2026-11-15",
  "stats": {
   "platforms_configured": 8,
   "platforms_ok": 8,
   "platforms_carried": 0,
-  "total_models": 193,
+  "total_models": 149,
   "stale_models": 0,
   "with_tools": 36,
   "with_vision": 65,
@@ -27,7 +27,7 @@
    "note": "单 key 聚合 20 个月费为 0 的模型，另有 openrouter/free 路由自动挑选可用免费模型",
    "key_env": "OPENROUTER_API_KEY",
    "api_gives": "full",
-   "verified": "2026-11-15",
+   "verified": "2026-11-16",
    "configured": "https://openrouter.ai/api/v1/models",
    "model_count": 17,
    "fetch": "ok"
@@ -44,7 +44,7 @@
    "note": "免绑卡。注意：免费档的数据可能被用于改进产品（欧洲经济区/英国/瑞士除外）",
    "key_env": "GEMINI_API_KEY",
    "api_gives": "partial",
-   "verified": "2026-11-15",
+   "verified": "2026-11-16",
    "configured": "https://generativelanguage.googleapis.com/v1beta/models",
    "model_count": 49,
    "fetch": "ok"
@@ -61,7 +61,7 @@
    "note": "推理速度最快的免费档之一。默认不保留数据，可开启零数据保留",
    "key_env": "GROQ_API_KEY",
    "api_gives": "partial",
-   "verified": "2026-11-15",
+   "verified": "2026-11-16",
    "configured": "https://api.groq.com/openai/v1/models",
    "model_count": 11,
    "fetch": "ok"
@@ -78,9 +78,9 @@
    "note": "托管大量开源模型。注册需手机号验证。会话内容不存储",
    "key_env": "NVIDIA_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-15",
+   "verified": "2026-11-16",
    "configured": "https://integrate.api.nvidia.com/v1/models",
-   "model_count": 83,
+   "model_count": 39,
    "fetch": "ok"
   },
   "zhipu": {
@@ -95,7 +95,7 @@
    "note": "国内直连。GLM 的 Flash 系列是长期免费的轻量档",
    "key_env": "ZHIPU_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-15",
+   "verified": "2026-11-16",
    "configured": "https://open.bigmodel.cn/api/paas/v4/models",
    "model_count": 12,
    "fetch": "ok"
@@ -112,7 +112,7 @@
    "note": "国内直连。LongCat-2.5-Preview：1.6T 总参 / 约 48B 激活 / 1M 上下文 / 原生多模态，强化 Coding",
    "key_env": "LONGCAT_API_KEY",
    "api_gives": "partial",
-   "verified": "2026-11-15",
+   "verified": "2026-11-16",
    "configured": "https://api.longcat.chat/openai/v1/models",
    "model_count": 3,
    "fetch": "ok"
@@ -129,7 +129,7 @@
    "note": "国内直连。同时提供 OpenAI 兼容端点与 Anthropic Messages 兼容端点（/v1/messages）",
    "key_env": "SENSENOVA_API_KEY",
    "api_gives": "full",
-   "verified": "2026-11-15",
+   "verified": "2026-11-16",
    "configured": "https://token.sensenova.cn/v1/models",
    "model_count": 8,
    "fetch": "ok"
@@ -146,7 +146,7 @@
    "note": "国内直连。含文本、图像、视频生成模型",
    "key_env": "AGNES_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-15",
+   "verified": "2026-11-16",
    "configured": "https://apihub.agnes-ai.com/v1/models",
    "model_count": 10,
    "fetch": "ok"
@@ -163,7 +163,7 @@
    "note": "需要 account_id + API Token 两个值配套。数据不用于训练",
    "key_env": "CLOUDFLARE_API_TOKEN",
    "api_gives": "minimal",
-   "verified": "2026-11-15",
+   "verified": "2026-11-16",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -180,7 +180,7 @@
    "note": "默认用你的数据训练模型，可在后台关闭",
    "key_env": "MISTRAL_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-15",
+   "verified": "2026-11-16",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -197,7 +197,7 @@
    "note": "仅限开发/评估用途",
    "key_env": "COHERE_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-15",
+   "verified": "2026-11-16",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -214,7 +214,7 @@
    "note": "聚合 200+ 模型的推理服务，额度很小，适合偶尔试",
    "key_env": "HUGGINGFACE_API_KEY",
    "api_gives": "minimal",
-   "verified": "2026-11-15",
+   "verified": "2026-11-16",
    "configured": false,
    "model_count": 0,
    "fetch": "skipped"
@@ -2287,122 +2287,6 @@
   },
   {
    "platform": "groq",
-   "id": "meta-llama/llama-prompt-guard-2-22m",
-   "name": "Llama Prompt Guard 2 22M",
-   "context": 512,
-   "max_out": 512,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "e4c13573cb6e"
-  },
-  {
-   "platform": "groq",
-   "id": "openai/gpt-oss-20b",
-   "name": "GPT OSS 20B",
-   "context": 131072,
-   "max_out": 65536,
-   "caps": {
-    "tools": true,
-    "vision": false,
-    "reasoning": true,
-    "json": true,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "fa15a86e7f8a"
-  },
-  {
-   "platform": "groq",
-   "id": "canopylabs/orpheus-arabic-saudi",
-   "name": "Canopy Labs Orpheus Arabic Saudi",
-   "context": 4000,
-   "max_out": 50000,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "6bac7e75adf3"
-  },
-  {
-   "platform": "groq",
-   "id": "openai/gpt-oss-safeguard-20b",
-   "name": "Safety GPT OSS 20B",
-   "context": 131072,
-   "max_out": 65536,
-   "caps": {
-    "tools": true,
-    "vision": false,
-    "reasoning": true,
-    "json": true,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "text"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "fa15a86e7f8a"
-  },
-  {
-   "platform": "groq",
    "id": "canopylabs/orpheus-v1-english",
    "name": "Canopy Labs Orpheus V1 English",
    "context": 4000,
@@ -2432,10 +2316,10 @@
   },
   {
    "platform": "groq",
-   "id": "allam-2-7b",
-   "name": "ALLaM-2-7b",
-   "context": 4096,
-   "max_out": 4096,
+   "id": "meta-llama/llama-prompt-guard-2-86m",
+   "name": "Prompt Guard 2 86M",
+   "context": 512,
+   "max_out": 512,
    "caps": {
     "tools": false,
     "vision": false,
@@ -2457,7 +2341,36 @@
    "region": "国际",
    "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
    "platform_label": "Groq",
-   "fp": "68feda92e2fe"
+   "fp": "7ce56714a315"
+  },
+  {
+   "platform": "groq",
+   "id": "meta-llama/llama-prompt-guard-2-22m",
+   "name": "Llama Prompt Guard 2 22M",
+   "context": 512,
+   "max_out": 512,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "e4c13573cb6e"
   },
   {
    "platform": "groq",
@@ -2491,39 +2404,10 @@
   },
   {
    "platform": "groq",
-   "id": "whisper-large-v3",
-   "name": "Whisper",
-   "context": 448,
-   "max_out": 448,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": true,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [
-    "audio"
-   ],
-   "cap_source": "api",
-   "free_kind": "permanent",
-   "base_url": "https://api.groq.com/openai/v1",
-   "signup_url": "https://console.groq.com/keys",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
-   "platform_label": "Groq",
-   "fp": "ec06295e47be"
-  },
-  {
-   "platform": "groq",
-   "id": "meta-llama/llama-prompt-guard-2-86m",
-   "name": "Prompt Guard 2 86M",
-   "context": 512,
-   "max_out": 512,
+   "id": "allam-2-7b",
+   "name": "ALLaM-2-7b",
+   "context": 4096,
+   "max_out": 4096,
    "caps": {
     "tools": false,
     "vision": false,
@@ -2545,12 +2429,70 @@
    "region": "国际",
    "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
    "platform_label": "Groq",
-   "fp": "7ce56714a315"
+   "fp": "68feda92e2fe"
   },
   {
    "platform": "groq",
-   "id": "whisper-large-v3-turbo",
-   "name": "Whisper Large V3 Turbo",
+   "id": "canopylabs/orpheus-arabic-saudi",
+   "name": "Canopy Labs Orpheus Arabic Saudi",
+   "context": 4000,
+   "max_out": 50000,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "6bac7e75adf3"
+  },
+  {
+   "platform": "groq",
+   "id": "openai/gpt-oss-20b",
+   "name": "GPT OSS 20B",
+   "context": 131072,
+   "max_out": 65536,
+   "caps": {
+    "tools": true,
+    "vision": false,
+    "reasoning": true,
+    "json": true,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
+   "free_kind": "permanent",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
+   "needs_card": false,
+   "needs_vpn": true,
+   "region": "国际",
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "fa15a86e7f8a"
+  },
+  {
+   "platform": "groq",
+   "id": "whisper-large-v3",
+   "name": "Whisper",
    "context": 448,
    "max_out": 448,
    "caps": {
@@ -2606,112 +2548,62 @@
    "fp": "fa15a86e7f8a"
   },
   {
-   "platform": "nvidia",
-   "id": "01-ai/yi-large",
-   "name": "01-ai/yi-large",
-   "context": null,
-   "max_out": null,
+   "platform": "groq",
+   "id": "whisper-large-v3-turbo",
+   "name": "Whisper Large V3 Turbo",
+   "context": 448,
+   "max_out": 448,
    "caps": {
     "tools": false,
     "vision": false,
     "reasoning": false,
     "json": false,
-    "audio": false,
+    "audio": true,
     "video": false,
     "websearch": false
    },
-   "input_modalities": [],
-   "cap_source": "doc",
+   "input_modalities": [
+    "audio"
+   ],
+   "cap_source": "api",
    "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
    "needs_card": false,
    "needs_vpn": true,
    "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "ec06295e47be"
   },
   {
-   "platform": "nvidia",
-   "id": "adept/fuyu-8b",
-   "name": "adept/fuyu-8b",
-   "context": null,
-   "max_out": null,
+   "platform": "groq",
+   "id": "openai/gpt-oss-safeguard-20b",
+   "name": "Safety GPT OSS 20B",
+   "context": 131072,
+   "max_out": 65536,
    "caps": {
-    "tools": false,
+    "tools": true,
     "vision": false,
-    "reasoning": false,
-    "json": false,
+    "reasoning": true,
+    "json": true,
     "audio": false,
     "video": false,
     "websearch": false
    },
-   "input_modalities": [],
-   "cap_source": "doc",
+   "input_modalities": [
+    "text"
+   ],
+   "cap_source": "api",
    "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
+   "base_url": "https://api.groq.com/openai/v1",
+   "signup_url": "https://console.groq.com/keys",
    "needs_card": false,
    "needs_vpn": true,
    "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "ai21labs/jamba-1.5-large-instruct",
-   "name": "ai21labs/jamba-1.5-large-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "aisingapore/sea-lion-7b-instruct",
-   "name": "aisingapore/sea-lion-7b-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
+   "quota": "30 请求/分；1000 请求/日；8K tokens/分；20 万 tokens/日（每模型）",
+   "platform_label": "Groq",
+   "fp": "fa15a86e7f8a"
   },
   {
    "platform": "nvidia",
@@ -2742,63 +2634,9 @@
   },
   {
    "platform": "nvidia",
-   "id": "databricks/dbrx-instruct",
-   "name": "databricks/dbrx-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "deepseek-ai/deepseek-coder-6.7b-instruct",
-   "name": "deepseek-ai/deepseek-coder-6.7b-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
    "id": "deepseek-ai/deepseek-v4.1-flash",
    "name": "deepseek-ai/deepseek-v4.1-flash",
-   "context": null,
+   "context": 1048576,
    "max_out": null,
    "caps": {
     "tools": false,
@@ -2819,115 +2657,7 @@
    "region": "国际",
    "quota": "约 40 请求/分（官方未公布确切数值）",
    "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "google/codegemma-1.1-7b",
-   "name": "google/codegemma-1.1-7b",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "google/codegemma-7b",
-   "name": "google/codegemma-7b",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "google/deplot",
-   "name": "google/deplot",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "google/gemma-2b",
-   "name": "google/gemma-2b",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
+   "fp": "1e1b87770bca"
   },
   {
    "platform": "nvidia",
@@ -3012,168 +2742,6 @@
   },
   {
    "platform": "nvidia",
-   "id": "google/recurrentgemma-2b",
-   "name": "google/recurrentgemma-2b",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "ibm/granite-3.0-3b-a800m-instruct",
-   "name": "ibm/granite-3.0-3b-a800m-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "ibm/granite-3.0-8b-instruct",
-   "name": "ibm/granite-3.0-8b-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "ibm/granite-34b-code-instruct",
-   "name": "ibm/granite-34b-code-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "ibm/granite-8b-code-instruct",
-   "name": "ibm/granite-8b-code-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "meta/codellama-70b",
-   "name": "meta/codellama-70b",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
    "id": "meta/llama-3.2-90b-vision-instruct",
    "name": "meta/llama-3.2-90b-vision-instruct",
    "context": null,
@@ -3228,116 +2796,8 @@
   },
   {
    "platform": "nvidia",
-   "id": "meta/llama2-70b",
-   "name": "meta/llama2-70b",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
    "id": "meta/muse-glimmer-30b",
    "name": "meta/muse-glimmer-30b",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "microsoft/kosmos-2",
-   "name": "microsoft/kosmos-2",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "microsoft/phi-3-vision-128k-instruct",
-   "name": "microsoft/phi-3-vision-128k-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "microsoft/phi-3.5-moe-instruct",
-   "name": "microsoft/phi-3.5-moe-instruct",
    "context": null,
    "max_out": null,
    "caps": {
@@ -3390,197 +2850,8 @@
   },
   {
    "platform": "nvidia",
-   "id": "mistralai/codestral-22b-instruct-v0.1",
-   "name": "mistralai/codestral-22b-instruct-v0.1",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "mistralai/mistral-7b-instruct-v0.3",
-   "name": "mistralai/mistral-7b-instruct-v0.3",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "mistralai/mistral-large",
-   "name": "mistralai/mistral-large",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "mistralai/mistral-large-2-instruct",
-   "name": "mistralai/mistral-large-2-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
    "id": "mistralai/mistral-large-4-1t-a52b",
    "name": "mistralai/mistral-large-4-1t-a52b",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "mistralai/mixtral-8x22b-v0.1",
-   "name": "mistralai/mixtral-8x22b-v0.1",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "moonshotai/kimi-k2.6",
-   "name": "moonshotai/kimi-k2.6",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "nv-mistralai/mistral-nemo-12b-instruct",
-   "name": "nv-mistralai/mistral-nemo-12b-instruct",
    "context": null,
    "max_out": null,
    "caps": {
@@ -3768,89 +3039,8 @@
   },
   {
    "platform": "nvidia",
-   "id": "nvidia/llama-3.1-nemotron-51b-instruct",
-   "name": "nvidia/llama-3.1-nemotron-51b-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "nvidia/llama-3.1-nemotron-70b-instruct",
-   "name": "nvidia/llama-3.1-nemotron-70b-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
    "id": "nvidia/llama-3.1-nemotron-safety-guard-8b-v3",
    "name": "nvidia/llama-3.1-nemotron-safety-guard-8b-v3",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
-   "name": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
    "context": null,
    "max_out": null,
    "caps": {
@@ -3957,60 +3147,6 @@
   },
   {
    "platform": "nvidia",
-   "id": "nvidia/llama3-chatqa-1.5-70b",
-   "name": "nvidia/llama3-chatqa-1.5-70b",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "nvidia/mistral-nemo-minitron-8b-8k-instruct",
-   "name": "nvidia/mistral-nemo-minitron-8b-8k-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
    "id": "nvidia/nemotron-3-embed-1b",
    "name": "nvidia/nemotron-3-embed-1b",
    "context": null,
@@ -4040,33 +3176,6 @@
    "platform": "nvidia",
    "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
    "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "nvidia/nemotron-3-super-120b-a12b",
-   "name": "nvidia/nemotron-3-super-120b-a12b",
    "context": null,
    "max_out": null,
    "caps": {
@@ -4281,87 +3390,6 @@
   },
   {
    "platform": "nvidia",
-   "id": "nvidia/nemotron-4-340b-instruct",
-   "name": "nvidia/nemotron-4-340b-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "nvidia/nemotron-4-340b-reward",
-   "name": "nvidia/nemotron-4-340b-reward",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "nvidia/nemotron-nano-3-30b-a3b",
-   "name": "nvidia/nemotron-nano-3-30b-a3b",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
    "id": "nvidia/nemotron-parse",
    "name": "nvidia/nemotron-parse",
    "context": null,
@@ -4391,33 +3419,6 @@
    "platform": "nvidia",
    "id": "nvidia/nemotron-parse-2.0",
    "name": "nvidia/nemotron-parse-2.0",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "nvidia/neva-22b",
-   "name": "nvidia/neva-22b",
    "context": null,
    "max_out": null,
    "caps": {
@@ -4497,62 +3498,8 @@
   },
   {
    "platform": "nvidia",
-   "id": "nvidia/riva-translate-4b-instruct",
-   "name": "nvidia/riva-translate-4b-instruct",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
    "id": "nvidia/riva-translate-4b-instruct-v2",
    "name": "nvidia/riva-translate-4b-instruct-v2",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "nvidia/vila",
-   "name": "nvidia/vila",
    "context": null,
    "max_out": null,
    "caps": {
@@ -4686,143 +3633,8 @@
   },
   {
    "platform": "nvidia",
-   "id": "writer/palmyra-creative-122b",
-   "name": "writer/palmyra-creative-122b",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "writer/palmyra-fin-70b-32k",
-   "name": "writer/palmyra-fin-70b-32k",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "writer/palmyra-med-70b",
-   "name": "writer/palmyra-med-70b",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "writer/palmyra-med-70b-32k",
-   "name": "writer/palmyra-med-70b-32k",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
    "id": "z-ai/glm-5.3-flash",
    "name": "z-ai/glm-5.3-flash",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://integrate.api.nvidia.com/v1",
-   "signup_url": "https://build.nvidia.com/",
-   "needs_card": false,
-   "needs_vpn": true,
-   "region": "国际",
-   "quota": "约 40 请求/分（官方未公布确切数值）",
-   "platform_label": "NVIDIA NIM",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "nvidia",
-   "id": "zyphra/zamba2-7b-instruct",
-   "name": "zyphra/zamba2-7b-instruct",
    "context": null,
    "max_out": null,
    "caps": {
@@ -5528,168 +4340,6 @@
   },
   {
    "platform": "agnes",
-   "id": "agnes-2.5-pro-alpha",
-   "name": "agnes-2.5-pro-alpha",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://apihub.agnes-ai.com/v1",
-   "signup_url": "https://apihub.agnes-ai.com/",
-   "needs_card": false,
-   "needs_vpn": false,
-   "region": "国内",
-   "quota": "永久免费，20 请求/分",
-   "platform_label": "Agnes AI",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "agnes",
-   "id": "agnes-video-2.5-flash",
-   "name": "agnes-video-2.5-flash",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://apihub.agnes-ai.com/v1",
-   "signup_url": "https://apihub.agnes-ai.com/",
-   "needs_card": false,
-   "needs_vpn": false,
-   "region": "国内",
-   "quota": "永久免费，20 请求/分",
-   "platform_label": "Agnes AI",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "agnes",
-   "id": "agnes-3.0-flash",
-   "name": "agnes-3.0-flash",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://apihub.agnes-ai.com/v1",
-   "signup_url": "https://apihub.agnes-ai.com/",
-   "needs_card": false,
-   "needs_vpn": false,
-   "region": "国内",
-   "quota": "永久免费，20 请求/分",
-   "platform_label": "Agnes AI",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "agnes",
-   "id": "agnes-image-2.1-flash",
-   "name": "agnes-image-2.1-flash",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://apihub.agnes-ai.com/v1",
-   "signup_url": "https://apihub.agnes-ai.com/",
-   "needs_card": false,
-   "needs_vpn": false,
-   "region": "国内",
-   "quota": "永久免费，20 请求/分",
-   "platform_label": "Agnes AI",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "agnes",
-   "id": "agnes-video-2.5",
-   "name": "agnes-video-2.5",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://apihub.agnes-ai.com/v1",
-   "signup_url": "https://apihub.agnes-ai.com/",
-   "needs_card": false,
-   "needs_vpn": false,
-   "region": "国内",
-   "quota": "永久免费，20 请求/分",
-   "platform_label": "Agnes AI",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "agnes",
-   "id": "agnes-image-2.0-flash",
-   "name": "agnes-image-2.0-flash",
-   "context": null,
-   "max_out": null,
-   "caps": {
-    "tools": false,
-    "vision": false,
-    "reasoning": false,
-    "json": false,
-    "audio": false,
-    "video": false,
-    "websearch": false
-   },
-   "input_modalities": [],
-   "cap_source": "doc",
-   "free_kind": "permanent",
-   "base_url": "https://apihub.agnes-ai.com/v1",
-   "signup_url": "https://apihub.agnes-ai.com/",
-   "needs_card": false,
-   "needs_vpn": false,
-   "region": "国内",
-   "quota": "永久免费，20 请求/分",
-   "platform_label": "Agnes AI",
-   "fp": "5fb11cb0aa34"
-  },
-  {
-   "platform": "agnes",
    "id": "agnes-2.5-flash",
    "name": "agnes-2.5-flash",
    "context": null,
@@ -5744,8 +4394,116 @@
   },
   {
    "platform": "agnes",
+   "id": "agnes-2.5-pro-alpha",
+   "name": "agnes-2.5-pro-alpha",
+   "context": null,
+   "max_out": null,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [],
+   "cap_source": "doc",
+   "free_kind": "permanent",
+   "base_url": "https://apihub.agnes-ai.com/v1",
+   "signup_url": "https://apihub.agnes-ai.com/",
+   "needs_card": false,
+   "needs_vpn": false,
+   "region": "国内",
+   "quota": "永久免费，20 请求/分",
+   "platform_label": "Agnes AI",
+   "fp": "5fb11cb0aa34"
+  },
+  {
+   "platform": "agnes",
    "id": "agnes-2.5-pro-beta",
    "name": "agnes-2.5-pro-beta",
+   "context": null,
+   "max_out": null,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [],
+   "cap_source": "doc",
+   "free_kind": "permanent",
+   "base_url": "https://apihub.agnes-ai.com/v1",
+   "signup_url": "https://apihub.agnes-ai.com/",
+   "needs_card": false,
+   "needs_vpn": false,
+   "region": "国内",
+   "quota": "永久免费，20 请求/分",
+   "platform_label": "Agnes AI",
+   "fp": "5fb11cb0aa34"
+  },
+  {
+   "platform": "agnes",
+   "id": "agnes-3.0-flash",
+   "name": "agnes-3.0-flash",
+   "context": null,
+   "max_out": null,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [],
+   "cap_source": "doc",
+   "free_kind": "permanent",
+   "base_url": "https://apihub.agnes-ai.com/v1",
+   "signup_url": "https://apihub.agnes-ai.com/",
+   "needs_card": false,
+   "needs_vpn": false,
+   "region": "国内",
+   "quota": "永久免费，20 请求/分",
+   "platform_label": "Agnes AI",
+   "fp": "5fb11cb0aa34"
+  },
+  {
+   "platform": "agnes",
+   "id": "agnes-image-2.0-flash",
+   "name": "agnes-image-2.0-flash",
+   "context": null,
+   "max_out": null,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [],
+   "cap_source": "doc",
+   "free_kind": "permanent",
+   "base_url": "https://apihub.agnes-ai.com/v1",
+   "signup_url": "https://apihub.agnes-ai.com/",
+   "needs_card": false,
+   "needs_vpn": false,
+   "region": "国内",
+   "quota": "永久免费，20 请求/分",
+   "platform_label": "Agnes AI",
+   "fp": "5fb11cb0aa34"
+  },
+  {
+   "platform": "agnes",
+   "id": "agnes-image-2.1-flash",
+   "name": "agnes-image-2.1-flash",
    "context": null,
    "max_out": null,
    "caps": {
@@ -5795,13 +4553,297 @@
    "quota": "永久免费，20 请求/分",
    "platform_label": "Agnes AI",
    "fp": "5fb11cb0aa34"
+  },
+  {
+   "platform": "agnes",
+   "id": "agnes-video-2.5",
+   "name": "agnes-video-2.5",
+   "context": null,
+   "max_out": null,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [],
+   "cap_source": "doc",
+   "free_kind": "permanent",
+   "base_url": "https://apihub.agnes-ai.com/v1",
+   "signup_url": "https://apihub.agnes-ai.com/",
+   "needs_card": false,
+   "needs_vpn": false,
+   "region": "国内",
+   "quota": "永久免费，20 请求/分",
+   "platform_label": "Agnes AI",
+   "fp": "5fb11cb0aa34"
+  },
+  {
+   "platform": "agnes",
+   "id": "agnes-video-2.5-flash",
+   "name": "agnes-video-2.5-flash",
+   "context": null,
+   "max_out": null,
+   "caps": {
+    "tools": false,
+    "vision": false,
+    "reasoning": false,
+    "json": false,
+    "audio": false,
+    "video": false,
+    "websearch": false
+   },
+   "input_modalities": [],
+   "cap_source": "doc",
+   "free_kind": "permanent",
+   "base_url": "https://apihub.agnes-ai.com/v1",
+   "signup_url": "https://apihub.agnes-ai.com/",
+   "needs_card": false,
+   "needs_vpn": false,
+   "region": "国内",
+   "quota": "永久免费，20 请求/分",
+   "platform_label": "Agnes AI",
+   "fp": "5fb11cb0aa34"
   }
  ],
  "radar": {
   "baseline": false,
   "added": [],
-  "removed": [],
-  "changed": []
+  "removed": [
+   {
+    "key": "nvidia::01-ai/yi-large",
+    "name": "01-ai/yi-large",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::adept/fuyu-8b",
+    "name": "adept/fuyu-8b",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::ai21labs/jamba-1.5-large-instruct",
+    "name": "ai21labs/jamba-1.5-large-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::aisingapore/sea-lion-7b-instruct",
+    "name": "aisingapore/sea-lion-7b-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::databricks/dbrx-instruct",
+    "name": "databricks/dbrx-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::deepseek-ai/deepseek-coder-6.7b-instruct",
+    "name": "deepseek-ai/deepseek-coder-6.7b-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::google/codegemma-1.1-7b",
+    "name": "google/codegemma-1.1-7b",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::google/codegemma-7b",
+    "name": "google/codegemma-7b",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::google/deplot",
+    "name": "google/deplot",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::google/gemma-2b",
+    "name": "google/gemma-2b",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::google/recurrentgemma-2b",
+    "name": "google/recurrentgemma-2b",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::ibm/granite-3.0-3b-a800m-instruct",
+    "name": "ibm/granite-3.0-3b-a800m-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::ibm/granite-3.0-8b-instruct",
+    "name": "ibm/granite-3.0-8b-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::ibm/granite-34b-code-instruct",
+    "name": "ibm/granite-34b-code-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::ibm/granite-8b-code-instruct",
+    "name": "ibm/granite-8b-code-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::meta/codellama-70b",
+    "name": "meta/codellama-70b",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::meta/llama2-70b",
+    "name": "meta/llama2-70b",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::microsoft/kosmos-2",
+    "name": "microsoft/kosmos-2",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::microsoft/phi-3-vision-128k-instruct",
+    "name": "microsoft/phi-3-vision-128k-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::microsoft/phi-3.5-moe-instruct",
+    "name": "microsoft/phi-3.5-moe-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::mistralai/codestral-22b-instruct-v0.1",
+    "name": "mistralai/codestral-22b-instruct-v0.1",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::mistralai/mistral-7b-instruct-v0.3",
+    "name": "mistralai/mistral-7b-instruct-v0.3",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::mistralai/mistral-large",
+    "name": "mistralai/mistral-large",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::mistralai/mistral-large-2-instruct",
+    "name": "mistralai/mistral-large-2-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::mistralai/mixtral-8x22b-v0.1",
+    "name": "mistralai/mixtral-8x22b-v0.1",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::moonshotai/kimi-k2.6",
+    "name": "moonshotai/kimi-k2.6",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::nv-mistralai/mistral-nemo-12b-instruct",
+    "name": "nv-mistralai/mistral-nemo-12b-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::nvidia/llama-3.1-nemotron-51b-instruct",
+    "name": "nvidia/llama-3.1-nemotron-51b-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::nvidia/llama-3.1-nemotron-70b-instruct",
+    "name": "nvidia/llama-3.1-nemotron-70b-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::nvidia/llama-3.1-nemotron-ultra-253b-v1",
+    "name": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::nvidia/llama3-chatqa-1.5-70b",
+    "name": "nvidia/llama3-chatqa-1.5-70b",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::nvidia/mistral-nemo-minitron-8b-8k-instruct",
+    "name": "nvidia/mistral-nemo-minitron-8b-8k-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::nvidia/nemotron-3-super-120b-a12b",
+    "name": "nvidia/nemotron-3-super-120b-a12b",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::nvidia/nemotron-4-340b-instruct",
+    "name": "nvidia/nemotron-4-340b-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::nvidia/nemotron-4-340b-reward",
+    "name": "nvidia/nemotron-4-340b-reward",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::nvidia/nemotron-nano-3-30b-a3b",
+    "name": "nvidia/nemotron-nano-3-30b-a3b",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::nvidia/neva-22b",
+    "name": "nvidia/neva-22b",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::nvidia/riva-translate-4b-instruct",
+    "name": "nvidia/riva-translate-4b-instruct",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::nvidia/vila",
+    "name": "nvidia/vila",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::writer/palmyra-creative-122b",
+    "name": "writer/palmyra-creative-122b",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::writer/palmyra-fin-70b-32k",
+    "name": "writer/palmyra-fin-70b-32k",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::writer/palmyra-med-70b",
+    "name": "writer/palmyra-med-70b",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::writer/palmyra-med-70b-32k",
+    "name": "writer/palmyra-med-70b-32k",
+    "platform": "nvidia"
+   },
+   {
+    "key": "nvidia::zyphra/zamba2-7b-instruct",
+    "name": "zyphra/zamba2-7b-instruct",
+    "platform": "nvidia"
+   }
+  ],
+  "changed": [
+   {
+    "key": "nvidia::deepseek-ai/deepseek-v4.1-flash",
+    "name": "deepseek-ai/deepseek-v4.1-flash",
+    "platform": "nvidia",
+    "diffs": [
+     "上下文 None → 1048576"
+    ]
+   }
+  ]
  },
  "offline_blacklist": [
   {
