@@ -1,30 +1,24 @@
 {
- "probed_at": "2026-11-15T09:06:26+00:00",
+ "probed_at": "2026-11-22T09:37:10+00:00",
  "counts": {
-  "callable": 13,
-  "agentic_only": 1,
-  "congested": 1,
+  "callable": 9,
+  "agentic_only": 0,
+  "congested": 3,
   "not_chat": 2,
   "error": 0
  },
  "results": {
   "inclusionai/ling-3.2-flash:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
+   "verdict": "congested",
+   "http": 429,
+   "message": "Provider returned error",
    "name": "inclusionAI: Ling 3.2 Flash (free)"
   },
   "baidu/ernie-5.5-flash-preview:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
+   "verdict": "congested",
+   "http": 429,
+   "message": "Provider returned error",
    "name": "Baidu: ERNIE-5.5-Flash-Preview (free)"
-  },
-  "thinkingmachines/inkling-2-small:free": {
-   "verdict": "agentic_only",
-   "http": 403,
-   "message": "thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
-   "name": "Thinking Machines: Inkling 2 Small (free)"
   },
   "liquid/lfm-3-1.7b:free": {
    "verdict": "callable",
@@ -50,23 +44,11 @@
    "message": "",
    "name": "NVIDIA: Nemotron 3.5 Super VL (free)"
   },
-  "dots-studio/dots-3-note-preview:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
-   "name": "Dots Studio: Dots3-Note Preview (free)"
-  },
   "nvidia/nemotron-3.5-lightning:free": {
    "verdict": "callable",
    "http": 200,
    "message": "",
    "name": "NVIDIA: Nemotron 3.5 Lightning (free)"
-  },
-  "cohere/north-mini-code:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
-   "name": "Cohere: North Mini Code (free)"
   },
   "nvidia/nemotron-3-ultra-550b-a55b:free": {
    "verdict": "callable",
@@ -81,15 +63,15 @@
    "name": "NVIDIA: Nemotron 3 Nano Omni (free)"
   },
   "google/gemma-4-26b-a4b-it:free": {
-   "verdict": "callable",
-   "http": 200,
-   "message": "",
-   "name": "Google: Gemma 4 26B A4B  (free)"
-  },
-  "google/gemma-4-31b-it:free": {
    "verdict": "congested",
    "http": 429,
    "message": "Provider returned error",
+   "name": "Google: Gemma 4 26B A4B  (free)"
+  },
+  "google/gemma-4-31b-it:free": {
+   "verdict": "callable",
+   "http": 200,
+   "message": "",
    "name": "Google: Gemma 4 31B (free)"
   },
   "google/lyria-3-pro-preview": {
